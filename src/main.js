@@ -1,8 +1,12 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
+import 'vuetify/styles';
 import App from './App.vue';
-import router from './router'; 
+import vuetify from './plugins/vuetify'; // Asegúrate de que la ruta sea correcta
+import router from './router'; // Importar el router
+import './style.css';
 
-new Vue({
-  router, 
-  render: h => h(App),
-}).$mount('#app');
+const app = createApp(App);
+
+app.use(router);  // Integrar el router
+app.use(vuetify); // Integrar Vuetify
+app.mount('#app');

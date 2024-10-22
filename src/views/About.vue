@@ -1,8 +1,15 @@
+<!-- src/views/About.vue -->
 <template>
-    <h1>about</h1>
-</template>
-<script>
-export default {
-    name: 'About'
-}   
-</script>
+    <div class="">
+      <h1>About Page</h1>
+      <v-btn>hola</v-btn>
+
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    name: 'About',
+  };
+  </script>
+  
