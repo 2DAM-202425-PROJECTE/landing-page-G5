@@ -6,53 +6,52 @@
           v-for="(item, i) in items"
           :key="i"
           :active="i === 0"
-          link
-          :title="item.text"
-        />
+        >
+          <!-- Usa router-link para la navegación -->
+          <router-link
+            :to="item.route"
+            class="v-list-item__content"
+            :class="{ 'active-btn': $route.path === item.route }"
+          >
+            {{ item.text }}
+          </router-link>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
-    <v-app-bar class="px-md-4">
+    <v-app-bar dark class="px-md-4">
       <template #prepend>
         <v-app-bar-nav-icon
+          color="black"
           v-if="$vuetify.display.smAndDown"
           @click="drawer = !drawer"
         />
       </template>
 
-      <v-img
-        class="me-sm-8"
-        max-width="40"
-        src="https://cdn.vuetifyjs.com/docs/images/logos/v.svg"
-      />
+      <v-img class="me-sm-8" max-width="40" src="/src/assets/icons/logo.png" />
 
       <template v-if="$vuetify.display.mdAndUp">
         <v-btn
           v-for="(item, i) in items"
           :key="i"
-          :active="i === 0"
-          class="me-2 text-none"
           slim
-          v-bind="item"
-        />
+          class="me-2 text-none"
+          :class="{ 'active-btn': $route.path === item.route }"
+        >
+          <router-link :to="item.route" class="v-btn__content">
+            {{ item.text }}
+          </router-link>
+        </v-btn>
       </template>
 
       <v-spacer />
 
       <template #append>
-        <v-btn
-          class="ms-1"
-          color="medium-emphasis"
-          icon="mdi-bell-outline"
-        />
-
+        <v-btn class="ms-1" color="medium-emphasis" icon="mdi-bell-outline" />
         <v-btn class="ms-1" icon>
-          <v-avatar image="https://cdn.vuetifyjs.com/images/john.png" />
-
+          <v-avatar class="border-2 border-slate-100" image="/src/assets/icons/profile.jpg" />
           <v-menu activator="parent" origin="top">
             <v-list>
               <v-list-item link title="Update profile" />
-
               <v-list-item link title="Sign out" />
             </v-list>
           </v-menu>
@@ -61,31 +60,28 @@
     </v-app-bar>
 
     <v-main height="200">
-      <!--  -->
+      <router-view />
     </v-main>
   </v-layout>
 </template>
 
 <script setup>
-  import { shallowRef } from 'vue';
+import { shallowRef } from 'vue'
 
-  const drawer = shallowRef(false)
+const drawer = shallowRef(false)
 
-  const items = [
-    {
-      text: 'Dashboard',
-    },
-    {
-      text: 'Users',
-    },
-    {
-      text: 'Projects',
-    },
-    {
-      text: 'Settings',
-    },
-    {
-      text: 'Contact',
-    },
-  ]
+const items = [
+  { text: 'Inicio', route: '/' },
+  { text: 'Precio', route: '/precio' },
+  { text: 'SobreNosotros', route: '/sobre-nosotros' },
+  { text: 'Contacto', route: '/contacto' },
+  { text: 'Preguntas frecuentes', route: '/preguntas-frecuentes' }
+]
 </script>
+
+<style scoped>
+.active-btn {
+  background-color: #5BC0BE; /* Cambia este color para tu diseño */
+  color: white;
+}
+</style>

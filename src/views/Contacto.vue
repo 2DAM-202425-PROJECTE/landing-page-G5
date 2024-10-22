@@ -1,15 +1,14 @@
 <!-- src/views/About.vue -->
 <template>
     <div class="">
-      <h1>About Page</h1>
-      <v-btn>hola</v-btn>
+      <h1>Contacto</h1>
 
     </div>
   </template>
   
   <script>
   export default {
-    name: 'About',
+    name: 'Contacto',
   };
   </script>
   

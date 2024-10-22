@@ -4,6 +4,8 @@ import App from './App.vue';
 import vuetify from './plugins/vuetify'; // Asegúrate de que la ruta sea correcta
 import router from './router'; // Importar el router
 import './style.css';
+import '@mdi/font/css/materialdesignicons.css';
+
 
 const app = createApp(App);
 
