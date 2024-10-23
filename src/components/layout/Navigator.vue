@@ -59,7 +59,7 @@
       </template>
     </v-app-bar>
 
-    <v-main height="full bg-GMprimary">
+    <v-main height="h-full">
       <router-view />
     </v-main>
   </v-layout>
