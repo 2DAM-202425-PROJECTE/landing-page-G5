@@ -5,11 +5,9 @@ import vuetify from './plugins/vuetify'; // Asegúrate de que la ruta sea correc
 import router from './router'; // Importar el router
 import './style.css';
 import '@mdi/font/css/materialdesignicons.css';
-import { MotionPlugin } from '@vueuse/motion'
 
 
 const app = createApp(App);
-app.use(MotionPlugin)
 app.use(router);  // Integrar el router
 app.use(vuetify); // Integrar Vuetify
 app.mount('#app');
