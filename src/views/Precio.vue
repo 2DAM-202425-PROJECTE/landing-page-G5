@@ -47,7 +47,7 @@
             <li>✖ Soporte técnico</li>
             <li>✖ Funciones avanzadas</li>
           </ul>
-          <button class="w-full px-4 py-2 mt-10 tracking-wide text-1C2541 capitalize bg-5BC0BE rounded-md hover:bg-6F73D2 focus:outline-none transform transition duration-200 hover:scale-105">
+            <button @click="pagar('pobre')" class="w-full px-4 py-2 mt-10 tracking-wide text-1C2541 capitalize bg-5BC0BE rounded-md hover:bg-6F73D2 focus:outline-none transform transition duration-200 hover:scale-105">
             Empezar
           </button>
         </div>
@@ -66,7 +66,7 @@
             <li>✔ Soporte técnico prioritario</li>
             <li>✖ Funciones avanzadas premium</li>
           </ul>
-          <button class="w-full px-4 py-2 mt-10 tracking-wide text-6F73D2 capitalize bg-white rounded-md hover:bg-gray-200 focus:outline-none transform transition duration-200 hover:scale-105">
+          <button @click="pagar('premiun')" class="w-full px-4 py-2 mt-10 tracking-wide text-6F73D2 capitalize bg-white rounded-md hover:bg-gray-200 focus:outline-none transform transition duration-200 hover:scale-105">
             Empezar
           </button>
         </div>
@@ -85,7 +85,7 @@
             <li>✔ Soporte técnico 24/7</li>
             <li>✔ Consultoría personalizada</li>
           </ul>
-          <button class="w-full px-4 py-2 mt-10 tracking-wide text-1C2541 capitalize bg-5BC0BE rounded-md hover:bg-6F73D2 focus:outline-none transform transition duration-200 hover:scale-105">
+          <button @click="pagar('pdidy')" class="w-full px-4 py-2 mt-10 tracking-wide text-1C2541 capitalize bg-5BC0BE rounded-md hover:bg-6F73D2 focus:outline-none transform transition duration-200 hover:scale-105">
             Empezar
           </button>
         </div>
@@ -113,6 +113,9 @@ export default {
     }
   },
   methods: {
+    pagar(plan) {
+      this.$router.push('/pago', { params: { plan } });
+    },  
     showMonthlyPrices() {
       this.isMonthly = true;
     },
