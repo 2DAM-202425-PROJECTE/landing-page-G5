@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div class="h-screen bg-GMprimary">
+    <div class="h-full bg-GMprimary">
     <Navigator></Navigator>
     <Footer></Footer>
   </div>
