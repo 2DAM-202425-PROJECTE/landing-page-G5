@@ -3,8 +3,21 @@
    <div class="hidden md:block absolute top-60 left-16 shadow-md shadow-black">
     <Card></Card>
     </div>
-    <div class="hidden md:block absolute top-72 right-16 shadow-md shadow-black">
-    <Card></Card>
+    <div class="hidden md:block absolute top-96 right-32 shadow-md shadow-black">
+  <v-card
+    class="mx-auto"
+    subtitle="La #1 en digitalización de gimnasios"
+    width="400"
+    color="#5BC0BE"
+  >
+    <template v-slot:title>
+      <span class="text-white font-weight-black">Bienvenido a GYM MANAGER</span>
+    </template>
+
+    <v-card-text class="bg-[#0D1917] text-white light pt-4">
+
+        somos líderes en software de gestión para gimnasios, digitalizando tu negocio con soluciones personalizadas que optimizan la gestión de membresías, clases y rendimiento del equipo. Con nuestro enfoque innovador y un soporte excepcional, transformamos la manera en que administras tu gimnasio y te ayudamos a alcanzar el éxito en la era digital.    </v-card-text>
+  </v-card>
     </div>
     <section class="relative lg:min-h-[300px] pt-24 pb-10 sm:pt-32 sm:pb-16 lg:pb-24">
 
@@ -210,11 +223,17 @@
 
 </div>
 
+<div class="flex justify-center w-full bg-gradient-to-t from-[#160921] to-black">
+    <div class="w-4/5">
+        <Newsletter></Newsletter>
+    </div>
 
-
+</div>
+<v-spacer class="h-100"></v-spacer>
 </template>
 
 
 <script setup>
 import Card from '../components/Card.vue';
+import Newsletter from '../components/Newsletter.vue';
 </script>
