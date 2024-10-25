@@ -51,7 +51,7 @@
           <v-avatar class="border-2 border-slate-100" image="/src/assets/icons/profile.jpg" />
           <v-menu activator="parent" origin="top">
             <v-list>
-              <v-list-item link title="Registrate" />
+              <v-list-item @click="$router.push('/login')" link title="Registrate" />
               <v-list-item link title="Sign out" />
             </v-list>
           </v-menu>
