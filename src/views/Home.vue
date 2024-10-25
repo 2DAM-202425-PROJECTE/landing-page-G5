@@ -205,7 +205,7 @@
           </dl>
         </div>
       </div>
-      <img src="https://webnova.com.ar/wp-content/uploads/2017/04/softnova2015.-1200x917.jpg" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+      <img src="https://webnova.com.ar/wp-content/uploads/2017/04/softnova2015.-1200x917.jpg" alt="Product screenshot" class="w-full md:w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
     </div>
   </div>
 </div>
@@ -223,10 +223,12 @@
 
 </div>
 
-<div class="flex justify-center w-full bg-gradient-to-t from-[#160921] to-black">
+<div class="flex flex-col items-center justify-center w-full bg-gradient-to-t from-[#160921] to-black">
     <div class="w-4/5">
         <Newsletter></Newsletter>
     </div>
+
+    <Comentarios></Comentarios>
 
 </div>
 <v-spacer class="h-100"></v-spacer>
@@ -235,5 +237,6 @@
 
 <script setup>
 import Card from '../components/Card.vue';
+import Comentarios from '../components/Comentarios.vue';
 import Newsletter from '../components/Newsletter.vue';
 </script>

@@ -11,7 +11,9 @@ export default {
         GMsecondary: "#0B132B",
         GMtertiary: "#6F73D2",
         GMquaternary: "#5BC0BE"
-        
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
       },
     },
   },
