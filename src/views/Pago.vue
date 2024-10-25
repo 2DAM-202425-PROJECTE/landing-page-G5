@@ -113,8 +113,10 @@
       <!-- Resumen de la Orden -->
       <div class="mt-8 p-4 bg-1C2541 rounded-md border border-gray-600 shadow-lg">
         <h2 class="text-lg font-semibold text-5BC0BE">Resumen de tu Pedido</h2>
-        <p class="text-gray-300">Plan Seleccionado: <strong>Premium</strong></p>
-        <p class="text-gray-300">Precio: <strong>€{{ premiumPrice }}</strong></p>
+        <p class="text-gray-300">Plan Seleccionado: <strong>{{ plan.split(" ")[0] }}</strong></p>
+        <p class="text-gray-300">Precio: <strong>€{{ 
+          plan.split(" ")[1]    
+        }}</strong></p>
       </div>
     </div>
   </div>
@@ -122,6 +124,11 @@
 
 <script>
 export default {
+  computed: {
+    plan() {
+      return this.$route.query.plan; // Obtén el plan de la query
+    } 
+  }, 
   name: 'Pago',
   data() {
     return {
@@ -137,6 +144,7 @@ export default {
       premiumPrice: 40, // Precio del plan premium
     };
   },
+  
   methods: {
     handleSubmit() {
       // Aquí puedes manejar el envío del formulario
