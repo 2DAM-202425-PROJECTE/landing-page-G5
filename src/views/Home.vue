@@ -1,5 +1,6 @@
 <template>
- <div class="bg-gradient-to-b from-[#101212]  to-[#08201D]">
+
+<div class="z-10 bg-gradient-to-b from-[#101212]  to-[#08201D]">
    <div class="hidden md:block absolute top-60 left-16 shadow-md shadow-black">
     <Card></Card>
     </div>
@@ -174,26 +175,14 @@
                 <template v-slot:default="{ isActive }">
                 <v-card title="Requisitos">
                     <v-card-text>
-    <h2 class="font-bold">Servidor principal</h2>
+
     <ul>
-        <li>Procesador: Mínimo un procesador de cuatro núcleos (por ejemplo, Intel i5 o equivalente).</li>
-        <li>Memoria RAM: Al menos 16 GB de RAM (preferiblemente 32 GB para manejar múltiples usuarios simultáneamente).</li>
-    </ul>
-    
-    <h2 class="font-bold">Almacenamiento</h2>
-    <ul>
-        <li>SSD de al menos 500 GB para un rendimiento óptimo.</li>
-        <li>Espacio adicional en disco duro o sistema de respaldo (HDD) de 1 TB para almacenamiento de datos a largo plazo.</li>
-        <li>Sistema Operativo: Windows Server, Linux (Ubuntu, CentOS, etc.) o un sistema operativo compatible con el software.</li>
+        <li>Conexion a internet</li>
+        <li>Ordenador</li>
+        <li>Licencia</li>
     </ul>
 
-    <h2 class="font-bold">Estaciones de Trabajo</h2>
-    <ul>
-        <li>Procesador: Mínimo un procesador dual-core (por ejemplo, Intel i3 o equivalente).</li>
-        <li>Memoria RAM: Al menos 8 GB de RAM.</li>
-        <li>Almacenamiento: HDD de al menos 250 GB o SSD de 256 GB para una carga rápida de aplicaciones.</li>
-        <li>Sistema Operativo: Windows 10 o superior, macOS, o una distribución de Linux compatible.</li>
-    </ul>
+
         </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
@@ -226,10 +215,11 @@
 <ContactSection></ContactSection>
 
 <div class="flex flex-col items-center justify-center w-full bg-gradient-to-t from-[#160921] to-black">
-    <div class="w-4/5">
+  
+  <div class="w-4/5">
         <Newsletter></Newsletter>
     </div>
-
+    <ContactSection></ContactSection>
     <Comentarios></Comentarios>
 
 </div>
@@ -241,5 +231,5 @@
 import Card from '../components/Card.vue';
 import Comentarios from '../components/Comentarios.vue';
 import Newsletter from '../components/Newsletter.vue';
-import ContactSection from '../components/ContactSection.vue';
+import ContactSection from '../components/incio/ContactSection.vue';
 </script>
