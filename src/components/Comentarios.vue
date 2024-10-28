@@ -19,9 +19,7 @@
       </v-carousel-item>
     </v-carousel>
 
-    <div class="text-center mt-4">
-      <v-btn @click="next" color="primary">Siguiente</v-btn>
-    </div>
+ 
   </v-container>
 </template>
 
