@@ -2,8 +2,8 @@
 <template>
     <div class="w-full justify-center flex">
   
-      <section class="dark:bg-gray-900">
-        <div class="container px-6 py-10 mx-auto">
+      <section class="w-full dark:bg-gray-900" >
+        <div class="mx-auto container px-6 py-10">
           <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
             Nuestro <span class="text-blue-500">Equipo Ejecutivo</span>
           </h1>
