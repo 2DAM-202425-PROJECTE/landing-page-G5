@@ -8,7 +8,6 @@ import '@mdi/font/css/materialdesignicons.css';
 
 
 const app = createApp(App);
-
 app.use(router);  // Integrar el router
 app.use(vuetify); // Integrar Vuetify
 app.mount('#app');

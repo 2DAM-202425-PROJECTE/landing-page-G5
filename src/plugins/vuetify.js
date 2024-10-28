@@ -8,7 +8,8 @@ const vuetify = createVuetify({
   components, // Registra todos los componentes
   directives,  // Registra todas las directivas
   icons: {
-    defaultSet: 'mdi', // Configurar MDI como el set de íconos por defecto
+    defaultSet: 'mdi',
+    iconfont : 'fa' || 'md',
   },
 
 });
