@@ -35,7 +35,60 @@
                     </svg>
                 </router-link>
 
-                <div class="grid grid-cols-1 px-20 mt-12 text-left gap-x-12 gap-y-8 sm:grid-cols-4 sm:px-0">
+              <div class="h-10"></div>
+              
+            </div>
+            
+        </div>
+        
+        
+    </section>
+</div>
+<div class="overflow-hidden bg-gradient-to-t from-GMsecondary relative to-[#08201D] py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      <div class="lg:pr-8 lg:pt-4">
+
+        <div class="lg:max-w-lg">
+            
+          <h2 class="text-base font-semibold leading-7 text-GMquaternary">Gestiona fácilmente tu gimnasio</h2>
+          <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-white sm:text-5xl">Todo en un solo lugar</p>
+          <p class="mt-6 text-lg leading-8 text-white">Optimiza la gestión de tu gimnasio con un software diseñado para facilitar el manejo de clientes, clases, entrenadores y recursos, permitiéndote dedicar más tiempo a tus miembros.</p>
+          <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-white lg:max-w-none">
+            <div class="relative pl-9">
+              <dt class="inline font-semibold text-GMquaternary">
+                <svg class="absolute left-1 top-1 h-5 w-5 text-GMquaternary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                  <path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z" clip-rule="evenodd" />
+                </svg>
+                Registra y gestiona clientes.
+              </dt>
+              <dd class="inline">Con una base de datos centralizada, organiza y administra fácilmente la información de tus clientes, desde membresías hasta historial de asistencia.</dd>
+            </div>
+            <div class="relative pl-9">
+              <dt class="inline font-semibold text-GMquaternary">
+                <svg class="absolute left-1 top-1 h-5 w-5 text-GMquaternary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                  <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd" />
+                </svg>
+                Organiza clases y entrenadores.
+              </dt>
+              <dd class="inline">Gestiona horarios de clases, asigna entrenadores y permite a los clientes registrarse fácilmente desde una plataforma central.</dd>
+            </div>
+            <div class="relative pl-9">
+              <dt class="inline font-semibold text-GMquaternary">
+                <svg class="absolute left-1 top-1 h-5 w-5 text-GMquaternary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                  <path d="M4.632 3.533A2 2 0 0 1 6.577 2h6.846a2 2 0 0 1 1.945 1.533l1.976 8.234A3.489 3.489 0 0 0 16 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234Z" />
+                  <path fill-rule="evenodd" d="M4 13a2 2 0 1 0 0 4h12a2 2 0 1 0 0-4H4Zm11.24 2a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z" clip-rule="evenodd" />
+                </svg>
+                Control de inventario y equipos.
+              </dt>
+              <dd class="inline">Monitorea el estado y disponibilidad de equipos en tiempo real, asegurando que tus recursos estén siempre listos para tus clientes.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <img src="https://webnova.com.ar/wp-content/uploads/2017/04/softnova2015.-1200x917.jpg" alt="Product screenshot" class="w-full md:w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+    </div>
+    <div class="grid grid-cols-1 px-20 mt-12 text-left gap-x-12 gap-y-8 sm:grid-cols-4 sm:px-0">
                     <div class="flex items-center">
                         <svg class="flex-shrink-0" width="31" height="25" viewBox="0 0 31 25" fill="none" xmlns="">
                             <path
@@ -155,58 +208,6 @@
             </v-dialog>
                     </div>
                 </div>
-              
-            </div>
-            
-        </div>
-        
-        
-    </section>
-</div>
-<div class="overflow-hidden bg-gradient-to-t from-GMsecondary relative to-[#08201D] py-24 sm:py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-      <div class="lg:pr-8 lg:pt-4">
-
-        <div class="lg:max-w-lg">
-            
-          <h2 class="text-base font-semibold leading-7 text-GMquaternary">Gestiona fácilmente tu gimnasio</h2>
-          <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-white sm:text-5xl">Todo en un solo lugar</p>
-          <p class="mt-6 text-lg leading-8 text-white">Optimiza la gestión de tu gimnasio con un software diseñado para facilitar el manejo de clientes, clases, entrenadores y recursos, permitiéndote dedicar más tiempo a tus miembros.</p>
-          <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-white lg:max-w-none">
-            <div class="relative pl-9">
-              <dt class="inline font-semibold text-GMquaternary">
-                <svg class="absolute left-1 top-1 h-5 w-5 text-GMquaternary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z" clip-rule="evenodd" />
-                </svg>
-                Registra y gestiona clientes.
-              </dt>
-              <dd class="inline">Con una base de datos centralizada, organiza y administra fácilmente la información de tus clientes, desde membresías hasta historial de asistencia.</dd>
-            </div>
-            <div class="relative pl-9">
-              <dt class="inline font-semibold text-GMquaternary">
-                <svg class="absolute left-1 top-1 h-5 w-5 text-GMquaternary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd" />
-                </svg>
-                Organiza clases y entrenadores.
-              </dt>
-              <dd class="inline">Gestiona horarios de clases, asigna entrenadores y permite a los clientes registrarse fácilmente desde una plataforma central.</dd>
-            </div>
-            <div class="relative pl-9">
-              <dt class="inline font-semibold text-GMquaternary">
-                <svg class="absolute left-1 top-1 h-5 w-5 text-GMquaternary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path d="M4.632 3.533A2 2 0 0 1 6.577 2h6.846a2 2 0 0 1 1.945 1.533l1.976 8.234A3.489 3.489 0 0 0 16 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234Z" />
-                  <path fill-rule="evenodd" d="M4 13a2 2 0 1 0 0 4h12a2 2 0 1 0 0-4H4Zm11.24 2a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z" clip-rule="evenodd" />
-                </svg>
-                Control de inventario y equipos.
-              </dt>
-              <dd class="inline">Monitorea el estado y disponibilidad de equipos en tiempo real, asegurando que tus recursos estén siempre listos para tus clientes.</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-      <img src="https://webnova.com.ar/wp-content/uploads/2017/04/softnova2015.-1200x917.jpg" alt="Product screenshot" class="w-full md:w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
-    </div>
   </div>
 </div>
 <div class="bg-gradient-to-b from-GMsecondary relative to-black text-white py-20 px-6 rounded-lg shadow-lg text-center">
