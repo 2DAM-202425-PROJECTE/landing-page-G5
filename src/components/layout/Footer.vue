@@ -20,6 +20,7 @@
           <div class="mt-2 text-center">
             <p class="text-sm text-[#1C2541]">123 Calle Ficticia, Ciudad, Barcelona</p>
             <p class="text-sm text-[#1C2541]">Tel: +34 658 84 48 24</p>
+            <p class="text-sm text-[#1C2541] mt-1">Horario de atención al cliente: Lunes a Viernes, 9:00 - 18:00</p>
           </div>
   
           <div class="flex justify-center -mx-2 mt-4">
