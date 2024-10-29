@@ -12,13 +12,13 @@
                           <svg :class="{ 'rotate-90': active === 1 }" class="transition-transform flex-shrink-0 w-6 h-6 text-[#5BC0BE] transform-gpu duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
                           </svg>
-                          <h1 class="mx-4 text-xl font-medium">How can I pay for my appointment?</h1>
+                          <h1 class="mx-4 text-xl font-medium">Cuales son los requisitos para usar la app?</h1>
                       </div>
                   </button>
   
                   <!-- Contenido desplegable -->
                   <div v-show="active === 1" class="mt-2 px-6 pb-4 text-gray-300" :class="active === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95' " style="transition: all 0.3s ease-out;">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eum quae. Harum officiis reprehenderit ex quia ducimus minima id provident molestias optio nam vel, quidem iure voluptatem, repellat et ipsa.</p>
+                      <p>los requisitos son .</p>
                   </div>
               </div>
   
