@@ -1,152 +1,132 @@
 <template>
-  <div class="z-10 min-h-screen bg-0B132B flex flex-col items-center justify-center">
-    <div class="container px-6 py-8 mx-auto">
-      <h1 class="text-3xl font-semibold text-center text-white capitalize lg:text-4xl">Plan de precios</h1>
-      <p class="max-w-2xl mx-auto mt-4 text-center text-gray-300">
-        Elige el plan que mejor se adapte a tus necesidades. Cambia entre mensual y anual para ver los precios actualizados.
-      </p>
-
-      <!-- Toggle Monthly/Yearly -->
-      <div class="flex justify-center mt-6">
-        <button
-          id="toggle-monthly"
-          ref="toggleMonthly"
-          :class="{
-            'bg-6F73D2 text-white shadow-lg transform transition duration-200 scale-105': isMonthly,
-            'bg-gray-200 text-1C2541 shadow transition duration-200 hover:bg-5BC0BE': !isMonthly
-          }"
-          class="mx-2 px-6 py-2 rounded-md focus:outline-none"
-          @click="showMonthlyPrices"
+  <div class="min-h-screen bg-gradient-to-br from-[#5bc0be] via-gray-900 to-green-500 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-5xl font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-400">Elige tu plan ideal</h1>
+      
+      <!-- Toggle para cambiar entre mensual y anual -->
+      <div class="flex justify-center items-center space-x-4 mb-12">
+        <span :class="{ 'text-blue-400': !isAnnual, 'text-gray-400': isAnnual }">Mensual</span>
+        <button 
+          @click="toggleBilling"
+          class="relative inline-flex items-center h-8 rounded-full w-16 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          :class="isAnnual ? 'bg-blue-600' : 'bg-gray-600'"
         >
-          Mensual
+          <span 
+            class="inline-block w-6 h-6 transform transition-transform duration-300 bg-white rounded-full shadow-lg"
+            :class="isAnnual ? 'translate-x-9' : 'translate-x-1'"
+          />
         </button>
-        <button
-          id="toggle-yearly"
-          ref="toggleYearly"
-          :class="{
-            'bg-6F73D2 text-white shadow-lg transform transition duration-200 scale-105': !isMonthly,
-            'bg-gray-200 text-1C2541 shadow transition duration-200 hover:bg-5BC0BE': isMonthly
-          }"
-          class="mx-2 px-6 py-2 rounded-md focus:outline-none"
-          @click="showYearlyPrices"
-        >
-          Anual
-        </button>
+        <span :class="{ 'text-blue-400': isAnnual, 'text-gray-400': !isAnnual }">Anual</span>
       </div>
 
-      <!-- Pricing Plans -->
-      <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Free Plan -->
-        <div class="w-full p-8 space-y-8 text-center border border-5BC0BE rounded-lg shadow-lg bg-1C2541 text-white transition-transform transform hover:scale-105">
-          <img src="/src/assets/icons/etiquetagratuita.png" alt="Gratuito" class="mx-auto w-16 h-16 mb-4" />
-          <p class="font-medium uppercase text-5BC0BE">Gratuito</p>
-          <h2 class="text-4xl font-semibold uppercase">€0</h2>
-          <p class="font-medium">Ilimitado</p>
-          <ul class="text-left">
-            <li>✔ Acceso limitado a funcionalidades básicas</li>
-            <li>✖ Soporte técnico</li>
-            <li>✖ Funciones avanzadas</li>
-            <li>✖ Diferentes ubicaciones</li>
-          </ul>
-          <button @click="pagar('Gratuito', 0)" class="w-full px-4 py-2 mt-10 tracking-wide text-1C2541 capitalize bg-5BC0BE rounded-md hover:bg-6F73D2 focus:outline-none transform transition duration-200 hover:scale-105">
-            Empezar
-          </button>
-        </div>
-
-        <!-- Premium Plan -->
-        <div class="shadow-xl shadow-black relative top-[-15px] w-full p-8 space-y-8 text-center border border-5BC0BE rounded-lg shadow-lg bg-6F73D2 text-white transition-transform transform hover:scale-105">
-          <img src="/src/assets/icons/calidad.png" alt="Premium" class="mx-auto w-16 h-16 mb-4" />
-          <p class="font-medium uppercase">Premium</p>
-          <h2 class="text-5xl font-bold uppercase">
-            <span v-if="isMonthly">€{{ premiumMonthlyPrice }}</span>
-            <span v-else>€{{ premiumYearlyPrice }}</span>
-          </h2>
-          <p class="font-medium">{{ isMonthly ? 'Por mes' : 'Por año' }}</p>
-          <ul class="text-left">
-            <li>✔ Acceso completo a todas las funcionalidades</li>
-            <li>✔ Soporte técnico prioritario</li>
-            <li>✔ Diferentes ubicaciones</li>
-            <li>✖ Funciones avanzadas premium</li>
-          </ul>
-          <button @click="pagar('Premium', isMonthly ? premiumMonthlyPrice : premiumYearlyPrice)" class="w-full px-4 py-2 mt-10 tracking-wide text-6F73D2 capitalize bg-white rounded-md hover:bg-gray-200 focus:outline-none transform transition duration-200 hover:scale-105">
-            Empezar
-          </button>
-        </div>
-
-        <!-- Enterprise Plan -->
-        <div class="w-full p-8 space-y-8 text-center border border-5BC0BE rounded-lg shadow-lg bg-1C2541 text-white transition-transform transform hover:scale-105">
-          <img src="/src/assets/icons/enterprise.png" alt="Enterprise" class="mx-auto w-16 h-16 mb-4" />
-          <p class="font-medium uppercase text-5BC0BE">Enterprise</p>
-          <h2 class="text-4xl font-semibold uppercase">
-            <span v-if="isMonthly">€{{ enterpriseMonthlyPrice }}</span>
-            <span v-else>€{{ enterpriseYearlyPrice }}</span>
-          </h2>
-          <p class="font-medium">{{ isMonthly ? 'Por mes' : 'Por año' }}</p>
-          <ul class="text-left">
-            <li>✔ Acceso a todas las funciones premium</li>
-            <li>✔ Soporte técnico 24/7</li>
-            <li>✔ Consultoría personalizada</li>
-            <li>✔ Diferentes ubicaciones</li>
-          </ul>
-          <button @click="pagar('Enterprise', isMonthly ? enterpriseMonthlyPrice : enterpriseYearlyPrice)" class="w-full px-4 py-2 mt-10 tracking-wide text-1C2541 capitalize bg-5BC0BE rounded-md hover:bg-6F73D2 focus:outline-none transform transition duration-200 hover:scale-105">
-            Empezar
-          </button>
+      <!-- Planes -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div v-for="plan in plans" :key="plan.name" 
+             class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl shadow-2xl overflow-hidden transition-all duration-300 transform hover:scale-105 flex flex-col">
+          <div class="p-6 flex-grow">
+            <div class="flex justify-between items-center mb-4">
+              <h2 class="text-2xl font-bold">{{ plan.name }}</h2>
+              <span v-if="plan.badge" class="px-2 py-1 bg-blue-600 text-xs font-semibold rounded-full">{{ plan.badge }}</span>
+            </div>
+            <p class="text-4xl font-bold mb-4">
+              {{ isAnnual ? plan.annualPrice : plan.monthlyPrice }}
+              <span class="text-lg font-normal">/{{ isAnnual ? 'año' : 'mes' }}</span>
+            </p>
+            <p v-if="isAnnual && plan.annualSavings" class="text-green-400 text-sm mb-4">Ahorra {{ plan.annualSavings }} al año</p>
+            <p class="text-gray-300 mb-6">{{ plan.description }}</p>
+            <ul class="space-y-3 mb-6">
+              <li v-for="feature in plan.features" :key="feature" class="flex items-center">
+                <CheckIcon class="h-5 w-5 text-green-400 mr-2 flex-shrink-0" />
+                <span>{{ feature }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="p-6 bg-gray-700 bg-opacity-50">
+            <button 
+              @click="redirectToPayment(plan.name)"
+              class="w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300"
+            >
+              {{ plan.name === 'Personalizado' ? 'Contáctanos' : 'Seleccionar plan' }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Precio',
-  data() {
-    return {
-      isMonthly: true,
-      premiumMonthlyPrice: 40,
-      enterpriseMonthlyPrice: 100,
-    };
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter() // Obtiene la instancia del router
+const isAnnual = ref(false)
+
+const plans = [
+  {
+    name: 'Gratis',
+    monthlyPrice: '€0',
+    annualPrice: '€0',
+    description: 'Perfecto para empezar tu viaje',
+    features: ['1 usuario', '1GB de almacenamiento', 'Soporte por email', 'Acceso a funciones básicas'],
+    badge: 'Popular'
   },
-  computed: {
-    premiumYearlyPrice() {
-      return this.premiumMonthlyPrice * 11;
-    },
-    enterpriseYearlyPrice() {
-      return this.enterpriseMonthlyPrice * 11;
-    }
+  {
+    name: 'Premium',
+    monthlyPrice: '€9.99',
+    annualPrice: '€99.99',
+    annualSavings: '€19.89',
+    description: 'Ideal para profesionales independientes',
+    features: ['5 usuarios', '10GB de almacenamiento', 'Soporte prioritario', 'Acceso API', 'Funciones avanzadas', 'Integraciones básicas'],
+    badge: 'Mejor valor'
   },
-  methods: {
-    pagar(plan, price) {
-      const planString = `${plan} ${price}`; 
-      this.$router.push({ name: 'pago', query: { plan: planString } }); 
-    },
-    showMonthlyPrices() {
-      this.isMonthly = true;
-    },
-    showYearlyPrices() {
-      this.isMonthly = false;
-    }
+  {
+    name: 'Enterprise',
+    monthlyPrice: '€49.99',
+    annualPrice: '€499.99',
+    annualSavings: '€99.89',
+    description: 'Potencia para grandes equipos',
+    features: ['Usuarios ilimitados', '100GB de almacenamiento', 'Soporte 24/7', 'Acceso API avanzado', 'Todas las funciones', 'Integraciones personalizadas', 'Panel de administración'],
+    badge: 'Todo incluido'
+  },
+  {
+    name: 'Personalizado',
+    monthlyPrice: 'Contactar',
+    annualPrice: 'Contactar',
+    description: 'Solución a medida para tu negocio',
+    features: ['Todo en Enterprise', 'Infraestructura dedicada', 'Gerente de cuenta personal', 'Personalización completa', 'Soporte VIP', 'Acuerdo de nivel de servicio personalizado'],
+    badge: 'A medida'
   }
-};
+]
+
+const toggleBilling = () => {
+  isAnnual.value = !isAnnual.value
+}
+
+const redirectToPayment = (planName) => {
+  if (planName === 'Personalizado') {
+    router.push('/personalizado') // Redirige a /personalizado para el plan Personalizado
+  } else {
+    router.push('/pago') // Redirige a /pago para los otros planes
+  }
+}
 </script>
 
 <style scoped>
-.bg-1C2541 {
-  background-color: #1C2541;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.bg-0B132B {
-  background-color: #0B132B;
-}
-.bg-6F73D2 {
-  background-color: #6F73D2;
-}
-.bg-5BC0BE {
-  background-color: #5BC0BE;
-}
-.text-1C2541 {
-  color: #1C2541;
-}
-.text-5BC0BE {
-  color: #5BC0BE;
+
+.bg-gradient-to-br {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
 }
 </style>
