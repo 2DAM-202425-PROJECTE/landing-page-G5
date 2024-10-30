@@ -46,6 +46,7 @@
             <li>✔ Acceso limitado a funcionalidades básicas</li>
             <li>✖ Soporte técnico</li>
             <li>✖ Funciones avanzadas</li>
+            <li>✖ Diferentes ubicaciones</li>
           </ul>
           <button @click="pagar('Gratuito', 0)" class="w-full px-4 py-2 mt-10 tracking-wide text-1C2541 capitalize bg-5BC0BE rounded-md hover:bg-6F73D2 focus:outline-none transform transition duration-200 hover:scale-105">
             Empezar
@@ -64,6 +65,7 @@
           <ul class="text-left">
             <li>✔ Acceso completo a todas las funcionalidades</li>
             <li>✔ Soporte técnico prioritario</li>
+            <li>✔ Diferentes ubicaciones</li>
             <li>✖ Funciones avanzadas premium</li>
           </ul>
           <button @click="pagar('Premium', isMonthly ? premiumMonthlyPrice : premiumYearlyPrice)" class="w-full px-4 py-2 mt-10 tracking-wide text-6F73D2 capitalize bg-white rounded-md hover:bg-gray-200 focus:outline-none transform transition duration-200 hover:scale-105">
@@ -84,6 +86,7 @@
             <li>✔ Acceso a todas las funciones premium</li>
             <li>✔ Soporte técnico 24/7</li>
             <li>✔ Consultoría personalizada</li>
+            <li>✔ Diferentes ubicaciones</li>
           </ul>
           <button @click="pagar('Enterprise', isMonthly ? enterpriseMonthlyPrice : enterpriseYearlyPrice)" class="w-full px-4 py-2 mt-10 tracking-wide text-1C2541 capitalize bg-5BC0BE rounded-md hover:bg-6F73D2 focus:outline-none transform transition duration-200 hover:scale-105">
             Empezar
