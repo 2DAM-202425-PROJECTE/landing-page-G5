@@ -223,6 +223,7 @@
     </div>
 
 </div>
+<ContactSection></ContactSection>
 
 <div class="flex flex-col items-center justify-center w-full bg-gradient-to-t from-[#160921] to-black">
     <div class="w-4/5">
@@ -240,4 +241,5 @@
 import Card from '../components/Card.vue';
 import Comentarios from '../components/Comentarios.vue';
 import Newsletter from '../components/Newsletter.vue';
+import ContactSection from '../components/ContactSection.vue';
 </script>

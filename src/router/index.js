@@ -6,6 +6,7 @@ import Contacto from '../views/Contacto.vue';
 import PreguntasFrecuentes from '../views/PreguntasFrecuentes.vue';
 import Pago from '../views/Pago.vue';
 import Login from '../views/Login.vue';
+import PagarPersonalizado from '../views/PagarPersonalizado.vue';
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/precio', name: 'Precio', component: Precio },
@@ -14,6 +15,7 @@ const routes = [
   { path: '/preguntas-frecuentes', name: 'PreguntasFrecuentes', component: PreguntasFrecuentes },
   { path: '/pago', name: 'pago', component: Pago , props: true},
   { path: '/login', name: 'Login', component: Login },
+  { path: '/plan-personalizado', name: 'plan-personalizado', component: PagarPersonalizado },
 
 ]
 
