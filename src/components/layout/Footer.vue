@@ -1,137 +1,78 @@
 <template>
-  <footer class="bg-[#0B132B] text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Columna 1: Logo y descripción -->
-        <div class="space-y-4">
-          <h2 class="text-2xl font-bold text-[#5BC0BE] animate-pulse">Gym Manager</h2>
-          <p class="text-sm text-[#6F73D2]">Ofreciendo soluciones innovadoras desde 2023</p>
-        </div>
+  <footer class="bg-background border-t">
+    <div class="container px-6 py-12 mx-auto">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
+        <div class="sm:col-span-2">
+          <h1 class="max-w-lg text-xl font-semibold tracking-tight text-primary xl:text-2xl">Subscribe to our newsletter to get update.</h1>
 
-        <!-- Columna 2: Enlaces rápidos -->
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold text-[#5BC0BE]">Enlaces Rápidos</h3>
-          <ul class="space-y-2">
-            <li v-for="item in quickLinks" :key="item">
-              <a 
-                href="#" 
-                class="text-[#6F73D2] hover:text-[#5BC0BE] transition-colors duration-300"
-              >
-                {{ item }}
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Columna 3: Newsletter -->
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold text-[#5BC0BE]">Suscríbete a nuestro Newsletter</h3>
-          <form @submit.prevent="handleSubmit" class="flex space-x-2">
-            <Input
-              type="email"
-              placeholder="Tu email"
-              v-model="email"
-              class="bg-[#1C2541] text-white border-[#6F73D2] focus:border-[#5BC0BE]"
-              required
-            />
-            <Button type="submit" class="bg-[#5BC0BE] hover:bg-[#6F73D2] transition-colors duration-300">
-              <Send class="h-4 w-4" />
-            </Button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Redes sociales -->
-      <div class="mt-8 flex justify-center space-x-6">
-        <a 
-          v-for="(Icon, index) in socialIcons" 
-          :key="index" 
-          href="#" 
-          class="text-[#6F73D2] hover:text-[#5BC0BE] transition-colors duration-300"
-        >
-          <component :is="Icon" class="h-6 w-6 transform hover:scale-110 transition-transform duration-300" />
-        </a>
-      </div>
-
-      <!-- Copyright y enlaces legales -->
-      <div class="mt-8 text-center text-sm text-[#6F73D2]">
-        <p>&copy; {{ currentYear }} Tu Empresa. Todos los derechos reservados.</p>
-        <div class="mt-2 space-x-4">
-          <div class="flex items-center pb-10">
-              <v-dialog max-width="500">
-                <template v-slot:activator="{ props: activatorProps }">
-                    <v-btn
-                    class="text-white mt-10"
-                    v-bind="activatorProps"
-                    color="#5BC0BE"
-                    text="Politica de Privacidad"
-                    variant="elevated"
-                    ></v-btn>
-                </template>
-
-                <template v-slot:default="{ isActive }">
-                  <v-card title="Requisitos">
-                          <v-card-text>
-                            <h2 class="font-bold">Estaciones de Trabajo</h2>
-                              <ul>
-                                <li>Procesador: Mínimo un procesador dual-core (por ejemplo, Intel i3 o equivalente).</li> 
-                              </ul>
-                          </v-card-text>
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn>
-                        text="Cerrar"
-                        @click="isActive.value = false"
-                      </v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </template>
-            </v-dialog>
+          <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
+            <input type="text" class="px-4 py-2 text-primary bg-background border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Email Address" />
+            <button type="button" class="w-full px-6 py-2 text-white bg-primary rounded-md md:w-auto md:mx-4 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+              Subscribe
+            </button>
           </div>
-          <a href="#" class="hover:text-[#5BC0BE] transition-colors duration-300">Política de Privacidad</a>
-          <a href="#" class="hover:text-[#5BC0BE] transition-colors duration-300">Términos de Servicio</a>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary">Quick Links</p>
+
+          <div class="flex flex-col items-start mt-5 space-y-2">
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Home</a>
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">About</a>
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Products</a>
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Services</a>
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Contact Us</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary">Resources</p>
+
+          <div class="flex flex-col items-start mt-5 space-y-2">
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">FAQ</a>
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Documentation</a>
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Privacy Policy</a>
+            <a href="#" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-6 border-muted h-px" />
+
+      <div class="flex flex-col items-center justify-between sm:flex-row">
+        <a href="/">
+          <span class="sr-only">Your Company</span>
+          <svg class="h-8 w-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <p class="mt-4 text-sm text-muted-foreground sm:mt-0">© {{ currentYear }} Your Company. All rights reserved.</p>
+
+        <div class="flex mt-4 space-x-4 sm:mt-0">
+          <a v-for="(icon, index) in socialIcons" :key="index" :href="icon.href" class="text-muted-foreground hover:text-primary">
+            <span class="sr-only">{{ icon.name }}</span>
+            <component :is="icon.component" class="w-6 h-6" />
+          </a>
         </div>
       </div>
     </div>
-    
   </footer>
 </template>
 
-<script>
-import { ref } from 'vue'
+<script setup>
+import { ref, computed } from 'vue'
+import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-vue-next'
 
+const currentYear = computed(() => new Date().getFullYear())
 
-export default {
-  setup() {
-    const email = ref('')
-    const quickLinks = ['Inicio', 'Servicios', 'Sobre Nosotros', 'Contacto']
-    
-    const currentYear = new Date().getFullYear()
-
-    const handleSubmit = () => {
-      // Aquí iría la lógica para manejar la suscripción
-      console.log('Email submitted:', email.value)
-      email.value = ''
-    }
-
-    return {
-      email,
-      quickLinks,
-  
-      currentYear,
-      handleSubmit
-    }
-  }
-}
+const socialIcons = ref([
+  { name: 'Facebook', href: '#', component: Facebook },
+  { name: 'Twitter', href: '#', component: Twitter },
+  { name: 'Instagram', href: '#', component: Instagram },
+  { name: 'LinkedIn', href: '#', component: Linkedin },
+  { name: 'GitHub', href: '#', component: Github },
+])
 </script>
-
-<style scoped>
-/* Estilos adicionales si es necesario */
-footer{
-  display: flex;
-  flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-</style>

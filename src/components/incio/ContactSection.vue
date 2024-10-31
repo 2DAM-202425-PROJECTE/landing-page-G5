@@ -1,32 +1,44 @@
 <template>
-    <div class="relative w-full h-screen overflow-hidden"> <!-- Contenedor relativo -->
-      <img 
-        src="https://web-back.perfectgym.com/sites/default/files/styles/460x/public/equipment%20%286%29.jpg?itok=bC0T32-K"  
-        alt="Imagen de contacto"
-        class="absolute inset-0 z-0 w-full h-full object-cover object-center" 
-      />
-      
-      <section class="flex items-center justify-center bg-gray-100 p-6 relative z-10"> <!-- Contenedor con z-index mayor -->
-        <div class="max-w-md text-center">
-          <h2 class="text-2xl font-bold mb-4">¿Tienes alguna pregunta?</h2>
-          <p class="mb-4">
-            Estamos aquí para ayudarte. Si deseas más información, no dudes en contactarnos.
-          </p>
-          <router-link to="/contacto" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">
-            Contáctanos
-          </router-link>
-        </div>
-      </section>
+  <section class=" relative h-[50vh] min-h-[400px] w-full overflow-hidden">
+    <div 
+      class="blur-sm absolute inset-0 bg-cover bg-center bg-no-repeat" 
+      :style="backgroundStyle"
+    />
+    <div class="absolute inset-0 bg-black/50"></div> <!-- Overlay for better text visibility -->
+    <div class="relative flex h-full items-center justify-center">
+      <div class="text-center">
+        <h2 class="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+          Estas listo para comenzar?
+        </h2>
+        <p class="mb-8 text-lg text-white/90 sm:text-xl">
+          Estamos aqui para contestar tus preguntas y ayudarte a comenzar.
+        </p>
+        <router-link to="/contacto">
+        <button class="text-white font-bold px-6 py-3 bg-GMquaternary rounded-md text-primary-foreground hover:bg-primary/90">
+          Contactanos
+        </button>
+      </router-link>
+      </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'ContactSection',
-  };
-  </script>
-  
-  <style scoped>
-  /* Aquí puedes agregar estilos adicionales si es necesario */
-  </style>
-  
+  </section>
+</template>
+
+<script>
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'ContactSection',
+  computed: {
+    backgroundStyle() {
+      return {
+        backgroundImage: "url('https://media.istockphoto.com/id/1391410249/es/foto/deportes-y-actividades-de-gimnasio.jpg?s=612x612&w=0&k=20&c=UVfqkA8dnim6qFRuSjLE6dQHFt7Tjo-AIkvnNVHNJUs=')",
+        backgroundAttachment: "fixed"
+      }
+    }
+  }
+})
+</script>
+
+<style scoped>
+/* Add any additional styles here if needed */
+</style>

@@ -199,7 +199,8 @@
                 </div>
   </div>
 </div>
-<div class="bg-gradient-to-b from-GMsecondary relative to-black text-white py-20 px-6 rounded-lg shadow-lg text-center">
+<FeatureSection></FeatureSection>
+<div class="bg-gradient-to-t from-black pt-32 to-[#08201D] relative text-white py-20 px-6 rounded-lg shadow-lg text-center">
     <div>
         <h2 class="text-4xl font-extrabold mb-4">Resuelve tus dudas</h2>
     <p class="mb-6 text-lg md:text-xl">Encuentra respuestas a las preguntas más comunes</p>
@@ -214,12 +215,11 @@
 </div>
 <ContactSection></ContactSection>
 
-<div class="flex flex-col items-center justify-center w-full bg-gradient-to-t from-[#160921] to-black">
+<div class="bg-gradient-to-b from-black to-green-950  flex flex-col items-center justify-center w-full">
   
-  <div class="w-4/5">
+  <div class="w-full mt-20">
         <Newsletter></Newsletter>
     </div>
-    <ContactSection></ContactSection>
     <Comentarios></Comentarios>
 
 </div>
@@ -232,4 +232,5 @@ import Card from '../components/Card.vue';
 import Comentarios from '../components/Comentarios.vue';
 import Newsletter from '../components/Newsletter.vue';
 import ContactSection from '../components/incio/ContactSection.vue';
+import FeatureSection from '../components/incio/FeatureSection.vue';
 </script>
