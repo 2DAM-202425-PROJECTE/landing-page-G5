@@ -6,9 +6,8 @@
     </div>
     <div class="hidden md:block absolute top-96 right-32 shadow-md shadow-black">
   <v-card
-    class="mx-auto"
+    class="mx-auto md:w-[300px] 2lx:w-auto"
     subtitle="La #1 en digitalización de gimnasios"
-    width="400"
     color="#5BC0BE"
   >
     <template v-slot:title>

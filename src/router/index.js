@@ -13,7 +13,7 @@ const routes = [
   { path: '/sobre-nosotros', name: 'SobreNosotros', component: SobreNosotros },
   { path: '/contacto', name: 'Contacto', component: Contacto },
   { path: '/preguntas-frecuentes', name: 'PreguntasFrecuentes', component: PreguntasFrecuentes },
-  { path: '/pago', name: 'pago', component: Pago , props: true},
+  { path: '/pago/:plan/:precio', name: 'pago', component: Pago , props: true},
   { path: '/login', name: 'Login', component: Login },
   { path: '/plan-personalizado', name: 'plan-personalizado', component: PagarPersonalizado },
 

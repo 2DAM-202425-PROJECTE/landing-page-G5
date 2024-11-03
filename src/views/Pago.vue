@@ -16,7 +16,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
         <h1 class="mt-4 text-4xl font-extrabold text-white animate-fade-in-down">
-          Plan Premium
+          Plan {{ props.plan }}
         </h1>
         <p class="mt-2 text-xl text-gray-300">Acceso completo a todos los cursos</p>
       </div>
@@ -25,7 +25,7 @@
         <!-- Información del Producto -->
         <div class="p-6 bg-gradient-to-r from-blue-600 to-teal-400 text-white relative overflow-hidden">
           <div class="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-white opacity-20 rounded-full"></div>
-          <h2 class="text-2xl font-semibold mb-4 relative z-10">Plan Premium</h2>
+          <h2 class="text-2xl font-semibold mb-4 relative z-10">Plan {{ props.plan }}</h2>
           <ul class="space-y-2 relative z-10">
             <li v-for="(feature, index) in planFeatures" :key="index" class="flex items-center">
               <CheckIcon class="h-5 w-5 mr-2 text-teal-200" />
@@ -94,16 +94,13 @@
           <h2 class="text-xl font-semibold text-white mb-4">Resumen de la Compra</h2>
           <div class="space-y-4">
             <div class="flex justify-between">
-              <span class="text-gray-300">Plan Premium</span>
-              <span class="font-medium text-white">€{{ precio.toFixed(2) }}</span>
+              <span class="text-gray-300">Plan  </span>
+              <span class="font-medium text-white">{{ props.plan }}</span>
             </div>
-            <div class="flex justify-between">
-              <span class="text-gray-300">Descuento</span>
-              <span class="font-medium text-green-400">-€{{ descuento.toFixed(2) }}</span>
-            </div>
+           
             <div class="flex justify-between text-lg font-semibold">
               <span class="text-white">Total</span>
-              <span class="text-white">€{{ (precio - descuento).toFixed(2) }}</span>
+              <span class="text-white">{{ props.precio }}</span>
             </div>
           </div>
         </div>
@@ -125,7 +122,6 @@
 
 <script setup>
 import { ref } from 'vue'
-
 const planFeatures = [
   'Acceso ilimitado a todos los cursos',
   'Certificados premium',
@@ -147,8 +143,11 @@ const formData = ref({
 
 const procesarPago = () => {
   console.log('Procesando pago:', formData.value)
-  alert('¡Pago procesado con éxito! Bienvenido a tu Plan Premium.')
+  alert(`¡Pago procesado con éxito! Bienvenido a tu Plan ${props.plan}.`)
 }
+
+const props = defineProps(['plan', 'precio']);
+
 </script>
 
 <style scoped>
