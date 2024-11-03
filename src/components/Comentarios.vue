@@ -1,82 +1,104 @@
 <template>
-  <v-container class="d-flex mt-16 flex-column align-center justify-center">
-    <v-card-title class="text-h4 font-weight-bold mb-5 text-white">Reseñas de nuestro software</v-card-title>
-
-    <v-carousel hide-delimiters height="400">
-      <v-carousel-item v-for="(item, index) in items" :key="index">
-        <v-row class="justify-center">
-          <!-- Mostrar solo 4 tarjetas en el carrusel -->
-          <v-col cols="12" md="3" v-if="index >= currentIndex && index < currentIndex + 7">
-            <v-card>
-              <v-card-item>
-                <v-card-title>{{ item.title }}</v-card-title>
-                <v-card-subtitle>{{ item.subtitle }}</v-card-subtitle>
-              </v-card-item>
-              <v-card-text>{{ item.text }}</v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-carousel-item>
-    </v-carousel>
-
- 
-  </v-container>
+  <section class="w-full py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">Lo que dicen nuestros clientes</h2>
+      
+      <div class="relative max-w-4xl mx-auto">
+        <transition name="fade" mode="out-in">
+          <div
+            :key="currentIndex"
+            class="bg-white rounded-lg shadow-lg p-8 text-center"
+          >
+            <p class="text-xl italic mb-4">{{ testimonials[currentIndex].comment }}</p>
+            <div class="flex items-center justify-center">
+              <img
+                :src="testimonials[currentIndex].avatar"
+                :alt="testimonials[currentIndex].name"
+                class="w-16 h-16 rounded-full mr-4"
+              />
+              <div class="text-left">
+                <p class="font-semibold">{{ testimonials[currentIndex].name }}</p>
+                <p class="text-gray-600">{{ testimonials[currentIndex].position }}</p>
+              </div>
+            </div>
+          </div>
+        </transition>
+        
+        <button
+          @click="prevTestimonial"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+        >
+          <ChevronLeftIcon class="w-6 h-6 text-gray-600" />
+        </button>
+        
+        <button
+          @click="nextTestimonial"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+        >
+          <ChevronRightIcon class="w-6 h-6 text-gray-600" />
+        </button>
+      </div>
+    </div>
+  </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      items: [
-        {
-          title: "Membresías Activas",
-          subtitle: "Gestión de Membresías",
-          text: "Ofrece un seguimiento detallado de las membresías activas, fechas de inicio y finalización, así como el estado de las renovaciones."
-        },
-        {
-          title: "Gestión de Clases",
-          subtitle: "Programación de Clases",
-          text: "Mantén a tus miembros informados sobre las clases programadas, sus horarios y las disponibilidades de los instructores."
-        },
-        {
-          title: "Informes de Asistencia",
-          subtitle: "Control de Asistencia",
-          text: "Genera informes sobre la asistencia de los miembros, identifica tendencias y mejora la retención de usuarios."
-        },
-        {
-          title: "Facturación Automática",
-          subtitle: "Manejo de Pagos",
-          text: "Automatiza el proceso de facturación y ofrece múltiples opciones de pago a tus miembros."
-        },
-        {
-          title: "Seguimiento de Progreso",
-          subtitle: "Análisis de Rendimiento",
-          text: "Permite a los miembros rastrear su progreso personal en cuanto a entrenamientos y metas de fitness."
-        },
-        {
-          title: "Reserva de Entrenadores",
-          subtitle: "Programación de Citas",
-          text: "Facilita la reserva de sesiones con entrenadores personales a través de la aplicación."
-        },
-        {
-          title: "Notificaciones Personalizadas",
-          subtitle: "Comunicación Efectiva",
-          text: "Envía notificaciones y recordatorios a tus miembros sobre clases, promociones y eventos especiales."
-        },
-      ],
-      currentIndex: 0,
-    };
+<script setup>
+import { ref } from 'vue'
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-vue-next'
+
+const testimonials = [
+  {
+    name: "Carlos Rodríguez",
+    position: "Propietario de FitLife Gym",
+    comment: "Este software ha revolucionado la forma en que administramos nuestro gimnasio. La gestión de clientes es ahora más eficiente que nunca, y hemos visto un aumento significativo en la retención de miembros.",
+    avatar: "/placeholder.svg?height=64&width=64"
   },
-  methods: {
-    next() {
-      this.currentIndex = (this.currentIndex + 1) % (this.items.length - 3);
-    },
+  {
+    name: "Ana Martínez",
+    position: "Gerente de Operaciones en PowerFit",
+    comment: "La función de gestión de clases es increíble. Nos permite programar, modificar y hacer un seguimiento de todas nuestras clases con facilidad. Nuestros instructores y clientes están encantados con la organización.",
+    avatar: "/placeholder.svg?height=64&width=64"
   },
-};
+  {
+    name: "Javier López",
+    position: "Dueño de MuscleTech Gym",
+    comment: "El módulo de ventas de suplementos ha sido un game-changer para nosotros. Hemos podido aumentar nuestras ventas en un 30% y mantener un control de inventario preciso. ¡Altamente recomendado!",
+    avatar: "/placeholder.svg?height=64&width=64"
+  },
+  {
+    name: "Laura Sánchez",
+    position: "Directora de Marketing en FitZone",
+    comment: "Las herramientas de análisis y reportes nos han permitido tomar decisiones basadas en datos para mejorar nuestros servicios y aumentar la satisfacción del cliente. Es como tener un consultor de negocios integrado.",
+    avatar: "/placeholder.svg?height=64&width=64"
+  }
+]
+
+const currentIndex = ref(0)
+
+const nextTestimonial = () => {
+  currentIndex.value = (currentIndex.value + 1) % testimonials.length
+}
+
+const prevTestimonial = () => {
+  currentIndex.value = (currentIndex.value - 1 + testimonials.length) % testimonials.length
+}
 </script>
 
 <style scoped>
-.text-center {
-  margin-top: 20px;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+  transform: translateX(0);
 }
 </style>
