@@ -12,8 +12,8 @@
             <p class="text-xl italic mb-4">{{ testimonials[currentIndex].comment }}</p>
             <div class="flex items-center justify-center">
               <img
-                :src="testimonials[currentIndex].avatar"
-                :alt="testimonials[currentIndex].name"
+                src='/src/assets/icons/profile.jpg'
+                alt="testimonials[currentIndex].name"
                 class="w-16 h-16 rounded-full mr-4"
               />
               <div class="text-left">
@@ -45,6 +45,7 @@
 <script setup>
 import { ref } from 'vue'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-vue-next'
+
 
 const testimonials = [
   {
