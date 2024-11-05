@@ -61,12 +61,14 @@
 
     <v-main height="h-full">
       <router-view />
+      <Cookies></Cookies>
     </v-main>
   </v-layout>
 </template>
 
 <script setup>
 import { shallowRef } from 'vue'
+import Cookies from '../Cookies.vue';
 
 const drawer = shallowRef(false)
 
@@ -77,6 +79,7 @@ const items = [
   { text: 'Contacto', route: '/contacto' },
   { text: 'Preguntas frecuentes', route: '/preguntas-frecuentes' }
 ]
+
 </script>
 
 <style scoped>

@@ -105,11 +105,16 @@ const toggleBilling = () => {
 
 const redirectToPayment = (planName) => {
   if (planName === 'Personalizado') {
-    router.push('/personalizado') // Redirige a /personalizado para el plan Personalizado
+    router.push('/contacto') 
   } else {
-    router.push('/pago') // Redirige a /pago para los otros planes
+    router.push({ path: `/pago/${planName}/${getPrice(planName)}` });
   }
 }
+
+const getPrice = (planName) => {
+  return plans.find(plan => plan.name === planName)[isAnnual.value ? 'annualPrice' : 'monthlyPrice']
+}
+
 </script>
 
 <style scoped>

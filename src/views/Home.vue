@@ -1,13 +1,13 @@
 <template>
- <div class="bg-gradient-to-b from-[#101212]  to-[#08201D]">
+
+<div class="z-10 bg-gradient-to-b from-[#101212]  to-[#08201D]">
    <div class="hidden md:block absolute top-60 left-16 shadow-md shadow-black">
     <Card></Card>
     </div>
     <div class="hidden md:block absolute top-96 right-32 shadow-md shadow-black">
   <v-card
-    class="mx-auto"
+    class="mx-auto md:w-[300px] 2lx:w-auto"
     subtitle="La #1 en digitalización de gimnasios"
-    width="400"
     color="#5BC0BE"
   >
     <template v-slot:title>
@@ -174,26 +174,14 @@
                 <template v-slot:default="{ isActive }">
                 <v-card title="Requisitos">
                     <v-card-text>
-    <h2 class="font-bold">Servidor principal</h2>
+
     <ul>
-        <li>Procesador: Mínimo un procesador de cuatro núcleos (por ejemplo, Intel i5 o equivalente).</li>
-        <li>Memoria RAM: Al menos 16 GB de RAM (preferiblemente 32 GB para manejar múltiples usuarios simultáneamente).</li>
-    </ul>
-    
-    <h2 class="font-bold">Almacenamiento</h2>
-    <ul>
-        <li>SSD de al menos 500 GB para un rendimiento óptimo.</li>
-        <li>Espacio adicional en disco duro o sistema de respaldo (HDD) de 1 TB para almacenamiento de datos a largo plazo.</li>
-        <li>Sistema Operativo: Windows Server, Linux (Ubuntu, CentOS, etc.) o un sistema operativo compatible con el software.</li>
+        <li>Conexion a internet</li>
+        <li>Ordenador</li>
+        <li>Licencia</li>
     </ul>
 
-    <h2 class="font-bold">Estaciones de Trabajo</h2>
-    <ul>
-        <li>Procesador: Mínimo un procesador dual-core (por ejemplo, Intel i3 o equivalente).</li>
-        <li>Memoria RAM: Al menos 8 GB de RAM.</li>
-        <li>Almacenamiento: HDD de al menos 250 GB o SSD de 256 GB para una carga rápida de aplicaciones.</li>
-        <li>Sistema Operativo: Windows 10 o superior, macOS, o una distribución de Linux compatible.</li>
-    </ul>
+
         </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
@@ -210,7 +198,8 @@
                 </div>
   </div>
 </div>
-<div class="bg-gradient-to-b from-GMsecondary relative to-black text-white py-20 px-6 rounded-lg shadow-lg text-center">
+<FeatureSection></FeatureSection>
+<div class="bg-gradient-to-t from-black pt-32 to-[#08201D] relative text-white py-20 px-6 rounded-lg shadow-lg text-center">
     <div>
         <h2 class="text-4xl font-extrabold mb-4">Resuelve tus dudas</h2>
     <p class="mb-6 text-lg md:text-xl">Encuentra respuestas a las preguntas más comunes</p>
@@ -223,12 +212,13 @@
     </div>
 
 </div>
+<ContactSection></ContactSection>
 
-<div class="flex flex-col items-center justify-center w-full bg-gradient-to-t from-[#160921] to-black">
-    <div class="w-4/5">
+<div class="bg-gradient-to-b from-black to-green-950  flex flex-col items-center justify-center w-full">
+  
+  <div class="w-full mt-20">
         <Newsletter></Newsletter>
     </div>
-
     <Comentarios></Comentarios>
 
 </div>
@@ -240,4 +230,6 @@
 import Card from '../components/Card.vue';
 import Comentarios from '../components/Comentarios.vue';
 import Newsletter from '../components/Newsletter.vue';
+import ContactSection from '../components/incio/ContactSection.vue';
+import FeatureSection from '../components/incio/FeatureSection.vue';
 </script>
