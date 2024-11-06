@@ -105,7 +105,7 @@ const toggleBilling = () => {
 
 const redirectToPayment = (planName) => {
   if (planName === 'Personalizado') {
-    router.push('/contacto') 
+    router.push('/plan-personalizado') 
   } else {
     router.push({ path: `/pago/${planName}/${getPrice(planName)}` });
   }
