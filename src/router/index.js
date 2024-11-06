@@ -7,6 +7,9 @@ import PreguntasFrecuentes from '../views/PreguntasFrecuentes.vue';
 import Pago from '../views/Pago.vue';
 import Login from '../views/Login.vue';
 import PagarPersonalizado from '../views/PagarPersonalizado.vue';
+import Termpriv from '../views/Termpriv.vue';
+import Cookiesterminos from '../views/Cookiesterminos.vue';
+
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/precio', name: 'Precio', component: Precio },
@@ -16,6 +19,8 @@ const routes = [
   { path: '/pago/:plan/:precio', name: 'pago', component: Pago , props: true},
   { path: '/login', name: 'Login', component: Login },
   { path: '/plan-personalizado', name: 'plan-personalizado', component: PagarPersonalizado },
+  { path: '/politicapriv', name: 'politicapriv', component: Termpriv },
+  { path: '/cookiesterminos', name: 'cookiesterminos', component: Cookiesterminos },
 
 ]
 

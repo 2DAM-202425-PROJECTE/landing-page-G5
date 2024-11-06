@@ -75,7 +75,7 @@ const drawer = shallowRef(false)
 const items = [
   { text: 'Inicio', route: '/' },
   { text: 'Precio', route: '/precio' },
-  { text: 'SobreNosotros', route: '/sobre-nosotros' },
+  { text: 'Sobre Nosotros', route: '/sobre-nosotros' },
   { text: 'Contacto', route: '/contacto' },
   { text: 'Preguntas frecuentes', route: '/preguntas-frecuentes' }
 ]
