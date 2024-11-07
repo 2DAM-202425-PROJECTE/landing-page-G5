@@ -6,7 +6,7 @@
     </div>
     <div class="hidden md:block absolute top-96 right-32 shadow-md shadow-black">
   <v-card
-    class="mx-auto md:w-[300px] 2lx:w-auto"
+    class="mx-auto md:w-[350px] 2lx:w-auto"
     subtitle="La #1 en digitalización de gimnasios"
     color="#5BC0BE"
   >
@@ -23,9 +23,7 @@
 
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative z-20">
             <div class="max-w-xl mx-auto text-center">
-                <h1 class="text-4xl font-bold sm:text-6xl">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-white"> Simplifica la administracion de tu gimansio </span>
-                </h1>
+                <Titulo></Titulo>
                 <p class="mt-5 text-base text-white sm:text-xl">Potencia tu gimnasio con una administración fácil y eficiente: todo lo que necesitas para gestionar clientes, clases y recursos en un solo lugar.</p>
 
                 <router-link to="/precio" title="" class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-white transition-all duration-200 bg-GMquaternary rounded-lg sm:mt-16 hover:bg-GMtertiary focus:bg-blue-700" role="button">
@@ -86,7 +84,7 @@
           </dl>
         </div>
       </div>
-      <img src="https://webnova.com.ar/wp-content/uploads/2017/04/softnova2015.-1200x917.jpg" alt="Product screenshot" class="w-full md:w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+      <img src="https://mockframe.com/images/blog/best-mockup-software.png?v=1666261606584267669" alt="Product screenshot" class="w-full md:w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
     </div>
     <div class="grid grid-cols-1 px-20 mt-12 text-left gap-x-12 gap-y-8 sm:grid-cols-4 sm:px-0">
                     <div class="flex items-center">
@@ -220,7 +218,6 @@
         <Newsletter></Newsletter>
     </div>
     <Comentarios></Comentarios>
-
 </div>
 <v-spacer class="h-100"></v-spacer>
 </template>
@@ -232,4 +229,6 @@ import Comentarios from '../components/Comentarios.vue';
 import Newsletter from '../components/Newsletter.vue';
 import ContactSection from '../components/incio/ContactSection.vue';
 import FeatureSection from '../components/incio/FeatureSection.vue';
+import Titulo from '../components/incio/Titulo.vue';
+import Scroller from '../components/incio/Scroller.vue';
 </script>
