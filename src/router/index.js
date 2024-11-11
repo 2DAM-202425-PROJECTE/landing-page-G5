@@ -9,6 +9,7 @@ import Login from '../views/Login.vue';
 import PagarPersonalizado from '../views/PagarPersonalizado.vue';
 import Termpriv from '../views/Termpriv.vue';
 import Cookiesterminos from '../views/Cookiesterminos.vue';
+import ProfileSetings from '../views/ProfileSetings.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -21,6 +22,7 @@ const routes = [
   { path: '/plan-personalizado', name: 'plan-personalizado', component: PagarPersonalizado },
   { path: '/politicapriv', name: 'politicapriv', component: Termpriv },
   { path: '/cookiesterminos', name: 'cookiesterminos', component: Cookiesterminos },
+  { path: '/profile-settings', name: 'profile-settings', component: ProfileSetings },
 
 ]
 

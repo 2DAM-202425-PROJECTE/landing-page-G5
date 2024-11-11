@@ -5,7 +5,7 @@
       <section class="w-full dark:bg-gray-900" >
         <div class="mx-auto container px-6 py-10">
           <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-            Nuestro <span class="text-blue-500">Equipo Ejecutivo</span>
+            Nuestro <span class="text-[#5BC0BE]">Equipo Ejecutivo</span>
           </h1>
   
           <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
