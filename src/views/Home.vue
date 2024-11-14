@@ -164,19 +164,19 @@
                     class="text-white mt-10"
                     v-bind="activatorProps"
                     color="#5BC0BE"
-                    text="Requisitos"
+                    text="Plataformas disponibles"
                     variant="elevated"
                     ></v-btn>
                 </template>
 
                 <template v-slot:default="{ isActive }">
-                <v-card title="Requisitos">
+                <v-card title="Plataformas disponibles">
                     <v-card-text>
 
     <ul>
-        <li>Conexion a internet</li>
-        <li>Ordenador</li>
-        <li>Licencia</li>
+        <li>Windows</li>
+        <li>macOS</li>
+        <li>Linux</li>
     </ul>
 
 
@@ -197,25 +197,26 @@
   </div>
 </div>
 <FeatureSection></FeatureSection>
-<div class="bg-gradient-to-t from-black pt-32 to-[#08201D] relative text-white py-20 px-6 rounded-lg shadow-lg text-center">
-    <div>
-        <h2 class="text-4xl font-extrabold mb-4">Resuelve tus dudas</h2>
-    <p class="mb-6 text-lg md:text-xl">Encuentra respuestas a las preguntas más comunes</p>
-    <router-link to="/preguntas-frecuentes" title="" class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-white transition-all duration-200 bg-GMquaternary rounded-lg sm:mt-16 hover:bg-GMtertiary focus:bg-blue-700" role="button">
-                    Preguntas frecuentes 
-                    <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </router-link>
-    </div>
+
+<Newsletter></Newsletter>
+
+<ContactSection></ContactSection>
+<div class="bg-gradient-to-b from-black pt-32 to-[#08201D] relative text-white py-20 px-6 rounded-lg text-center">
+  <div>
+      <h2 class="text-4xl font-extrabold mb-4">Resuelve tus dudas</h2>
+  <p class="mb-6 text-lg md:text-xl">Encuentra respuestas a las preguntas más comunes</p>
+  <router-link to="/preguntas-frecuentes" title="" class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-white transition-all duration-200 bg-GMquaternary rounded-lg sm:mt-16 hover:bg-GMtertiary focus:bg-blue-700" role="button">
+                  Preguntas frecuentes 
+                  <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+              </router-link>
+  </div>
 
 </div>
-<ContactSection></ContactSection>
-
-<div class="bg-gradient-to-b from-black to-green-950  flex flex-col items-center justify-center w-full">
+<div class="bg-gradient-to-b from-[#08201D] to-slate-800  flex flex-col items-center justify-center w-full">
   
   <div class="w-full mt-20">
-        <Newsletter></Newsletter>
     </div>
     <Comentarios></Comentarios>
 </div>
@@ -230,5 +231,4 @@ import Newsletter from '../components/Newsletter.vue';
 import ContactSection from '../components/incio/ContactSection.vue';
 import FeatureSection from '../components/incio/FeatureSection.vue';
 import Titulo from '../components/incio/Titulo.vue';
-import Scroller from '../components/incio/Scroller.vue';
 </script>

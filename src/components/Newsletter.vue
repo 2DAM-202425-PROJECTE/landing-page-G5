@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-md-16 relative" fluid>
+  <v-container class="!p-56 bg-gradient-to-t from-black to-[#08201D]  pa-md-16 relative" fluid>
     <v-row align="center">
       <v-col cols="12" lg="6">
         <v-responsive max-width="450">
