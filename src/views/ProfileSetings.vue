@@ -43,16 +43,20 @@
                     :src="usuario.avatar" 
                     alt="Avatar" 
                     class="w-24 h-24 rounded-full object-cover">
-                  <input 
-                    type="file" 
-                    @change="handleImageChange"
-                    class="absolute bottom-0 right-0 opacity-0 w-8 h-8 cursor-pointer"
-                  />
-                  <button 
-                    @click="handleImageChange"
-                    class="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full p-2 hover:bg-blue-600 transition-colors duration-200">
-                    <CameraIcon class="w-4 h-4" />
-                  </button>
+                    <div class="relative">
+                    <input 
+                      id="fileInput"
+                      type="file" 
+                      @change="handleImageChange"
+                      class="absolute bottom-0 right-0 opacity-0 w-8 h-8 cursor-pointer"
+                    />
+                    <button 
+                      @click="triggerFileInput"
+                      class="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full p-2 hover:bg-blue-600 transition-colors duration-200">
+                      <CameraIcon class="w-4 h-4" />
+                    </button>
+                  </div>
+
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold text-gray-800">
@@ -188,17 +192,18 @@ import {
   CameraIcon, SaveIcon 
 } from 'lucide-vue-next'
 
+const profile_photo = ref('https://cdn-icons-png.flaticon.com/512/149/149071.png')
 const activeSection = ref('Perfil')
 const newInteres = ref('')
 const usuario = ref({
-  nombre: 'Ana García',
-  email: 'ana@example.com',
+  nombre: 'Florian Cumer',
+  email: 'cumer@example.com',
   telefono: '+34 123 456 789',
   ubicacion: 'Madrid, España',
   bio: 'Diseñadora UX/UI apasionada por crear experiencias digitales intuitivas y atractivas.',
   username: 'ana_garcia',
   rol: 'Diseñadora Senior',
-  avatar: 'https://i.pravatar.cc/150?img=47',
+  avatar: profile_photo.value,
   intereses: ['Diseño UX', 'Ilustración'],
   notificaciones: {
     email: true,
@@ -249,6 +254,12 @@ const handleImageChange = (event) => {
     reader.readAsDataURL(file)
   }
 }
+function triggerFileInput() {
+      const fileInput = document.getElementById('fileInput');
+      if (fileInput) {
+        fileInput.click(); // Esto abre el selector de archivos
+      }
+    }
 </script>
 
 <style scoped>
