@@ -38,8 +38,8 @@
               <div class="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl">
                 <h1 class="text-xl font-medium text-black dark:text-gray-200">Contactanos</h1>
   
-                <p class="mt-2 text-white dark:text-gray-400">
-                  Ask us everything and we would love to hear from you
+                <p class="mt-2 text-black dark:text-gray-400">
+                 Tienes alguna pregunta?
                 </p>
   
                 <form class="mt-6" @submit.prevent="submitForm">
@@ -50,7 +50,7 @@
   
                   <div class="flex-1 mt-6">
                     <label class="block mb-2 text-sm text-black dark:text-gray-200">Email</label>
-                    <input type="email" v-model="email" placeholder="johndoe@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                    <input type="email" v-model="email" placeholder="cumer@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                   </div>
   
                   <div class="w-full mt-6">

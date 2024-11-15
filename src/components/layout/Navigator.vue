@@ -7,10 +7,8 @@
           :key="i"
           :active="i === 0"
         >
-          <!-- Usa router-link para la navegación -->
           <router-link
             :to="item.route"
-            class="v-list-item__content"
             :class="{ 'active-btn': $route.path === item.route }"
           >
             {{ item.text }}
@@ -30,18 +28,18 @@
       <v-img class="me-sm-8" max-width="40" src="/src/assets/icons/logo.png" />
 
       <template v-if="$vuetify.display.mdAndUp">
-        <v-btn
+        <v-btn 
           v-for="(item, i) in items"
           :key="i"
           slim
           class="me-2 text-none"
+          @click="$router.push(item.route)"
           :class="{ 'active-btn': $route.path === item.route }"
         >
-          <router-link :to="item.route" class="v-btn__content">
-            {{ item.text }}
-          </router-link>
+          {{ item.text }}
         </v-btn>
       </template>
+      
 
       <v-spacer />
 
@@ -77,7 +75,7 @@ const items = [
   { text: 'Precio', route: '/precio' },
   { text: 'Sobre Nosotros', route: '/sobre-nosotros' },
   { text: 'Contacto', route: '/contacto' },
-  { text: 'Preguntas frecuentes', route: '/preguntas-frecuentes' }
+  { text: 'Preguntas frecuentes', route: '/preguntas-frecuentes' },
 ]
 
 </script>

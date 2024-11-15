@@ -1,12 +1,12 @@
 <template>
-  <div class="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-    <!-- Fondo con movimiento -->
+  <RegisterBefore></RegisterBefore>
+
+  <div class="relative min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
     <div class="absolute inset-0 z-0">
       <div v-for="i in 50" :key="i">
       </div>
     </div>
     
-    <!-- Elementos gráficos adicionales -->
     <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-500 to-transparent opacity-20"></div>
     <div class="absolute bottom-0 right-0 w-64 h-64 bg-teal-400 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
     
@@ -22,7 +22,6 @@
       </div>
       
       <form @submit.prevent="procesarPago" class="bg-gray-800 shadow-2xl rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-105">
-        <!-- Información del Producto -->
         <div class="p-6 bg-gradient-to-r from-blue-600 to-teal-400 text-white relative overflow-hidden">
           <div class="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-white opacity-20 rounded-full"></div>
           <h2 class="text-2xl font-semibold mb-4 relative z-10">Plan {{ props.plan }}</h2>
@@ -33,7 +32,6 @@
             </li>
           </ul>
         </div>
-<!-- Información Personal -->
         <div class="p-6 border-b border-gray-700">
           <h2 class="text-xl font-semibold text-white mb-4">Información Personal</h2>
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -122,6 +120,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import RegisterBefore from '../components/precio/RegisterBefore.vue';
 const planFeatures = [
   'Acceso ilimitado a todos los cursos',
   'Certificados premium',
