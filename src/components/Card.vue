@@ -19,7 +19,7 @@
                 height="130px"
                 cover
               >
-                <v-card-title class="text-white" v-text="card.title"></v-card-title>
+                <v-card-title class="text-white" v-text="card.title"></v-card-title> 
               </v-img>
             </v-card>
           </v-col>
