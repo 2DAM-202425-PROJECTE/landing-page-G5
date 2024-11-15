@@ -28,7 +28,7 @@
   </template>
   
   <script setup>
-  import { Lock, CreditCard, Tag, CalendarDays, Dumbbell, Users, BarChart, Smartphone } from 'lucide-vue-next'
+  import { Lock, CreditCard, Tag, CalendarDays, Dumbbell, Users, BarChart, Smartphone, ArrowUp } from 'lucide-vue-next'
   
   const features = [
     {
@@ -77,6 +77,12 @@
       title: "Integración con App Móvil",
       description: "Ofrece una app móvil de marca para que los miembros reserven clases, sigan su progreso y accedan a información del gimnasio en cualquier lugar.",
       icon: Smartphone,
+      badge: "Móvil"
+    },
+    {
+      title: "Predicion de Ingresos",
+      description: "Predice, tus futuros ingresos, analizando las ganancias i perdidas de meses anteriors,.",
+      icon: ArrowUp,
       badge: "Móvil"
     }
   ]
