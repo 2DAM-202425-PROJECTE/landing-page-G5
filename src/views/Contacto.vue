@@ -42,20 +42,21 @@
                  Tienes alguna pregunta?
                 </p>
   
-                <form class="mt-6" @submit.prevent="submitForm">
+                <form   action="https://formspree.io/f/xyzypjer"
+                method="POST" class="mt-6">
                   <div class="flex-1">
                     <label class="block mb-2 text-sm text-black dark:text-white">Nombre</label>
-                    <input type="text" v-model="name" placeholder="John Doe" class="block w-full px-5 py-3 mt-2 text-black bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                    <input type="text" name="name" placeholder="John Doe" class="block w-full px-5 py-3 mt-2 text-black bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                   </div>
   
                   <div class="flex-1 mt-6">
                     <label class="block mb-2 text-sm text-black dark:text-gray-200">Email</label>
-                    <input type="email" v-model="email" placeholder="cumer@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                    <input type="email" name="email" placeholder="cumer@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                   </div>
   
                   <div class="w-full mt-6">
                     <label class="block mb-2 text-sm text-black dark:text-gray-200">Mensaje</label>
-                    <textarea v-model="message" class="block w-full h-32 px-5 py-3 mt-2 text-black placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-black focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" placeholder="Message"></textarea>
+                    <textarea name="message" class="block w-full h-32 px-5 py-3 mt-2 text-black placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-black focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" placeholder="Message"></textarea>
                   </div>
   
                   <button class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#5bc0be] rounded-md hover:bg-[#34b9b7] focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">

@@ -67,10 +67,10 @@ import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-vue-next'
 const currentYear = computed(() => new Date().getFullYear())
 
 const socialIcons = ref([
-  { name: 'Facebook', href: '#', component: Facebook },
-  { name: 'Twitter', href: '#', component: Twitter },
-  { name: 'Instagram', href: '#', component: Instagram },
-  { name: 'LinkedIn', href: '#', component: Linkedin },
-  { name: 'GitHub', href: '#', component: Github },
+  { name: 'Facebook', href: 'https://www.facebook.com/gymmanager', component: Facebook },
+  { name: 'Twitter', href: 'https://x.com/gymmanager005', component: Twitter },
+  { name: 'Instagram', href: 'https://www.instagram.com/gymmanager', component: Instagram },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/gymmanager', component: Linkedin },
+  { name: 'GitHub', href: 'https://github.com/2DAM-202425-PROJECTE/landing-page-G5', component: Github },
 ])
 </script>

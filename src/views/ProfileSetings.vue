@@ -281,13 +281,13 @@ const profile_photo = ref('https://cdn-icons-png.flaticon.com/512/149/149071.png
 const activeSection = ref('Perfil')
 const newInteres = ref('')
 const usuario = ref({
-  nombre: 'Florian Cumer',
-  email: 'cumer@example.com',
+  nombre: 'Florian Heius',
+  email: 'heius@gymmanager.com',
   telefono: '+34 123 456 789',
-  ubicacion: 'Madrid, España',
+  ubicacion: 'Tortosa, España',
   bio: 'Diseñadora UX/UI apasionada por crear experiencias digitales intuitivas y atractivas.',
-  username: 'ana_garcia',
-  rol: 'Diseñadora Senior',
+  username: 'florian_hius',
+  rol: 'Diseñador Senior',
   avatar: profile_photo.value,
   intereses: ['Diseño UX', 'Ilustración'],
   notificaciones: {
