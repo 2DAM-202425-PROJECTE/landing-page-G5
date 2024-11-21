@@ -6,14 +6,14 @@
             <div class="text-white lg:w-1/2 lg:mx-6 animate-fade-in"> <!-- Clase animate-fade-in -->
               <h1 class="text-3xl font-semibold capitalize lg:text-4xl font-poppins mt-12 mb-2">Formulari De Contacte</h1> <!-- Aumentado el margen superior -->
               
-              <p class="max-w-xl mt-4 font-poppins"> <!-- Aumentado el margen superior -->
+              <p class="max-w-xl mt-4 font-poppins"> <!-- Aumenta el marge superior -->
                 Tens algun dubte, consulta o suggeriment? Ens encantaria escoltar-te. Omple el formulari amb les teves dades i el teu missatge, i un membre del nostre equip es posarà en contacte amb tu tan aviat com sigui possible per oferir-te l'ajuda que necessitis. Gràcies per confiar en nosaltres!
               </p>
   
-              <!-- Sección de Redes Sociales -->
+              <!-- Secció de Reds Socials -->
             <div class="social-media mt-8">
             <h2 class="text-lg font-semibold font-poppins">Síguenos en redes sociales</h2>
-            <div class="icons mt-12 flex justify-start space-x-4"> <!-- AQUI LO AJUSTO -->
+            <div class="icons mt-12 flex justify-start space-x-4"> <!-- AQUI HO AJUSTO-->
             <a
             v-for="(link, index) in socialLinks"
             :key="index"
@@ -30,7 +30,7 @@
     </div>
  </div>
 
-              <!-- Fin de la Sección de Redes Sociales -->
+              <!-- Fi de la Secció de Reds Socials -->
   
             </div>
   
@@ -45,12 +45,12 @@
                 <form class="mt-6" @submit.prevent="submitForm">
                   <div class="flex-1">
                     <label class="block mb-2 text-sm text-black dark:text-white">Nombre</label>
-                    <input type="text" v-model="name" placeholder="John Doe" class="block w-full px-5 py-3 mt-2 text-black bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                    <input type="text" v-model="name" placeholder="Your name" class="block w-full px-5 py-3 mt-2 text-black bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                   </div>
   
                   <div class="flex-1 mt-6">
                     <label class="block mb-2 text-sm text-black dark:text-gray-200">Email</label>
-                    <input type="email" v-model="email" placeholder="cumer@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                    <input type="email" v-model="email" placeholder="example@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                   </div>
   
                   <div class="w-full mt-6">
@@ -80,22 +80,22 @@
         socialLinks: [
           {
             name: "Facebook",
-            url: "https://www.facebook.com",
+            url: "https://www.facebook.com/Gymmanager005",
             icon: "https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png",
           },
           {
             name: "Twitter",
-            url: "https://www.twitter.com",
+            url: "https://x.com/gymmanager005",
             icon: "https://img.icons8.com/ios-filled/50/ffffff/twitter-squared.png",
           },
           {
             name: "Instagram",
-            url: "https://www.instagram.com",
+            url: "https://www.instagram.com/gymmanager5/",
             icon: "https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png",
           },
           {
             name: "LinkedIn",
-            url: "https://www.linkedin.com",
+            url: "https://www.linkedin.com/in/gym-manager-88a537338/",
             icon: "https://img.icons8.com/ios-filled/50/ffffff/linkedin.png",
           },
         ],
@@ -113,15 +113,15 @@
   </script>
   
   <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap'); /* Importar fuente Poppins */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap'); /* Importar font Poppins */
   
   body {
-    font-family: 'Poppins', sans-serif; /* Aplicar fuente Poppins */
+    font-family: 'Poppins', sans-serif; /* Aplicar font Poppins */
   }
   
   .social-media {
-    text-align: left; /* Cambiado a izquierda para alinear el texto */
-    color: white; /* Ajusta el color según sea necesario */
+    text-align: left; /* Cambiat a esquerra per alinear el text */
+    color: white; /* Ajusta el color segon sigi necessari */
   }
   
   .icons {
@@ -139,13 +139,13 @@
     filter: brightness(1.2);
   }
   
-  /* Añadir más efectos de sombra y transición */
+  /* fica mes efectes de sombra i transició */
   .icon:hover .bg {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease-in-out;
   }
   
-  /* Animación de entrada */
+  /* Animació de entrada */
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -158,6 +158,6 @@
   }
   
   .animate-fade-in {
-    animation: fadeIn 0.8s ease forwards; /* Añadir la animación al elemento */
+    animation: fadeIn 0.8s ease forwards; /* afegir la animació al element */
   }
   </style>
