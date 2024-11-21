@@ -2,38 +2,7 @@
   <v-container class="!p-56 bg-gradient-to-t from-black to-[#08201D]  pa-md-16 relative" fluid>
     <v-row align="center">
       <v-col cols="12" lg="6">
-        <v-responsive max-width="450">
-          <h1 class="text-white font-weight-bold mb-4 text-h5 text-sm-h4">
-            Subscribete a nuestra newsletter
-          </h1>
-  
-          <p class="!text-white text-subtitle-2 text-medium-emphasis mb-6">
-            Disfruta de contenido exclusivo y actualizaciones semanales.
-          </p>
-  
-          <v-text-field
-            v-model="email"
-            flat
-            placeholder="Enter your email"
-            rounded="lg"
-            type="email"
-            variant="solo-filled"
-          >
-            <template #append-inner>
-              <v-btn
-                @click="sendEmail"
-                class="text-none"
-                color="primary"
-                text="Subscribe"
-                variant="flat"
-              />
-            </template>
-          </v-text-field>
-
-          <!-- Mostrar el mensaje de éxito o error -->
-          <p v-if="message" class="text-white mt-2">{{ message }}</p>
-
-        </v-responsive>
+        <iframe src="https://gymmanager.substack.com/embed" width="480" height="150" style="border:1px solid #EEE; background:transparent;" frameborder="0" scrolling="no"></iframe>
       </v-col>
 
       <v-col v-for="item in newsletterItems" :key="item.title" cols="12" lg="3" md="6">
