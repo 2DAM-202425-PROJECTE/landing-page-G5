@@ -50,7 +50,8 @@
           <v-menu activator="parent" origin="top">
             <v-list>
               <v-list-item @click="$router.push('/login')" link title="Registrate" />
-              <v-list-item link title="Sign out" />
+              <v-list-item link title="Cerrar Sesion" />
+              <v-list-item @click="$router.push('/profile-settings')"link title="Configuracion" />
             </v-list>
           </v-menu>
         </v-btn>

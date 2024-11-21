@@ -43,16 +43,20 @@
                     :src="usuario.avatar" 
                     alt="Avatar" 
                     class="w-24 h-24 rounded-full object-cover">
-                  <input 
-                    type="file" 
-                    @change="handleImageChange"
-                    class="absolute bottom-0 right-0 opacity-0 w-8 h-8 cursor-pointer"
-                  />
-                  <button 
-                    @click="handleImageChange"
-                    class="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full p-2 hover:bg-blue-600 transition-colors duration-200">
-                    <CameraIcon class="w-4 h-4" />
-                  </button>
+                    <div class="relative">
+                    <input 
+                      id="fileInput"
+                      type="file" 
+                      @change="handleImageChange"
+                      class="absolute bottom-0 right-0 opacity-0 w-8 h-8 cursor-pointer"
+                    />
+                    <button 
+                      @click="triggerFileInput"
+                      class="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full p-2 hover:bg-blue-600 transition-colors duration-200">
+                      <CameraIcon class="w-4 h-4" />
+                    </button>
+                  </div>
+
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold text-gray-800">
@@ -133,12 +137,48 @@
             <!-- Account Section -->
             <section v-if="activeSection === 'Cuenta'" class="space-y-6">
               <h3 class="text-lg font-semibold text-gray-800">Configuraciones de la cuenta</h3>
-              <p class="text-gray-600">Aquí puedes actualizar las configuraciones relacionadas con tu cuenta.</p>
-              <button 
-                class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors duration-200">
-                Cerrar sesión
-              </button>
-            </section>
+
+                        <!-- Change Password -->
+              <div>
+                <label for="current-password" class="block text-sm font-medium text-gray-700">
+                  Contraseña actual
+                </label>
+                <input
+                  id="current-password"
+                  type="password"
+                  placeholder="••••••••"
+                  class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                />
+              </div>
+              <div>
+                <label for="new-password" class="block text-sm font-medium text-gray-700">
+                  Nueva contraseña
+                </label>
+                <input
+                  id="new-password"
+                  type="password"
+                  placeholder="••••••••"
+                  class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                />
+              </div>
+
+                      <!-- Deactivate Account -->
+                <div>
+                  <label for="deactivate" class="block text-sm font-medium text-gray-700">
+                    Desactivar cuenta
+                  </label>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Si desactivas tu cuenta, no podrás acceder hasta que la reactives.
+                  </p>
+                  <button
+                    id="deactivate"
+                    class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors duration-200"
+                  >
+                    Desactivar cuenta
+                  </button>
+                </div>
+
+           </section>
 
             <!-- Notifications Section -->
             <section v-if="activeSection === 'Notificaciones'" class="space-y-6">
@@ -152,6 +192,10 @@
                   <input type="checkbox" v-model="usuario.notificaciones.sms" />
                   Notificaciones por SMS
                 </label>
+                <label class="flex items-center gap-2 mt-2">
+                <input type="checkbox" v-model="usuario.notificaciones.push" />
+                Notificaciones push en la aplicación
+                </label>
               </div>
             </section>
 
@@ -163,7 +207,52 @@
                 <input type="checkbox" v-model="usuario.privacidad.perfil_publico" />
                 Perfil público
               </label>
+                <!-- Share Data -->
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" v-model="usuario.privacidad.compartir_datos" />
+                  Compartir datos de actividad con terceros
+                </label>
+
+                          <!-- Post Visibility -->
+                <div>
+                  <label for="post-visibility" class="block text-sm font-medium text-gray-700">
+                    Visibilidad de publicaciones
+                  </label>
+                  <select
+                    id="post-visibility"
+                    v-model="usuario.privacidad.visibilidad_post"
+                    class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                  >
+                    <option value="todos">Visible para todos</option>
+                    <option value="amigos">Solo amigos</option>
+                    <option value="privado">Solo yo</option>
+                  </select>
+                </div>
+
+
+
+
+
+               <!-- Advanced Security -->
+               <div>
+                  <label class="block text-sm font-medium text-gray-700">
+                    Configuración avanzada de seguridad
+                  </label>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Habilita autenticación en dos pasos para mayor seguridad.
+                  </p>
+                  <button
+                    class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-200"
+                  >
+                    Activar autenticación en dos pasos
+                  </button>
+                </div>
+
+
             </section>
+
+
+
 
             <!-- Save Button -->
             <div class="mt-8">
@@ -188,17 +277,18 @@ import {
   CameraIcon, SaveIcon 
 } from 'lucide-vue-next'
 
+const profile_photo = ref('https://cdn-icons-png.flaticon.com/512/149/149071.png')
 const activeSection = ref('Perfil')
 const newInteres = ref('')
 const usuario = ref({
-  nombre: 'Ana García',
-  email: 'ana@example.com',
+  nombre: 'Florian Heius',
+  email: 'heius@gymmanager.com',
   telefono: '+34 123 456 789',
-  ubicacion: 'Madrid, España',
+  ubicacion: 'Tortosa, España',
   bio: 'Diseñadora UX/UI apasionada por crear experiencias digitales intuitivas y atractivas.',
-  username: 'ana_garcia',
-  rol: 'Diseñadora Senior',
-  avatar: 'https://i.pravatar.cc/150?img=47',
+  username: 'florian_hius',
+  rol: 'Diseñador Senior',
+  avatar: profile_photo.value,
   intereses: ['Diseño UX', 'Ilustración'],
   notificaciones: {
     email: true,
@@ -249,6 +339,12 @@ const handleImageChange = (event) => {
     reader.readAsDataURL(file)
   }
 }
+function triggerFileInput() {
+      const fileInput = document.getElementById('fileInput');
+      if (fileInput) {
+        fileInput.click(); // Esto abre el selector de archivos
+      }
+    }
 </script>
 
 <style scoped>
