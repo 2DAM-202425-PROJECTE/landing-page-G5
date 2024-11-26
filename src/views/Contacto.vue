@@ -24,7 +24,7 @@
             :title="link.name"
             >
             <div class="bg-[#5bc0be] p-4 rounded-full shadow-md hover:shadow-xl transition duration-300 ease-in-out flex items-center justify-center">
-            <img :src="link.icon" :alt="link.name" class="w-8 h-8" />
+            <img :src="link.icon" :alt="link.name" class="object-contain w-8 h-8" />
         </div>
         </a>
     </div>

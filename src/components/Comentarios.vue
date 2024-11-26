@@ -26,14 +26,14 @@
         
         <button
           @click="prevTestimonial"
-          class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+          class="absolute left-10 md:left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
         >
           <ChevronLeftIcon class="w-6 h-6 text-gray-600" />
         </button>
         
         <button
           @click="nextTestimonial"
-          class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+          class="absolute right-10 md:right-0 top-1/2 transform -translate-y-1/2 translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
         >
           <ChevronRightIcon class="w-6 h-6 text-gray-600" />
         </button>

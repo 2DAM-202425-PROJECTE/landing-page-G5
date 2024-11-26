@@ -1,10 +1,10 @@
 <template>
-  <v-container class="!p-56 bg-gradient-to-t from-black to-[#08201D]  pa-md-16 relative" fluid>
+  <v-container class="!md:p-56 bg-gradient-to-t from-black to-[#08201D]  pa-md-16 relative" fluid>
     <v-row align="center">
-      <v-col cols="12" lg="6">
-        <iframe src="https://gymmanager.substack.com/embed" width="480" height="150" style="border:1px solid #EEE; background:transparent;" frameborder="0" scrolling="no"></iframe>
-      </v-col>
+<div class="flex md:w-2/4 justify-center">
+  <iframe src="https://gymmanager.substack.com/embed" width="380" height="150" style="border:1px solid #EEE; background:transparent;" frameborder="0" scrolling="no"></iframe>
 
+</div>
       <v-col v-for="item in newsletterItems" :key="item.title" cols="12" lg="3" md="6">
         <div>
           <v-avatar class="mb-2" color="primary" :icon="item.icon" rounded />
