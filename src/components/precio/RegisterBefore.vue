@@ -1,7 +1,7 @@
 <template>
   <!-- Usamos v-if para controlar la visibilidad del div -->
   <div v-if="showDiv" class="  absolute z-20 h-full w-full" style="background-color: rgba(0, 0, 0, 0.5);">
-    <div class="z-40 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2/4 h-2/4 p-6 rounded-lg shadow-lg bg-white">
+    <div class="z-40 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-2/4 h-2/4 p-6 rounded-lg shadow-lg bg-white">
       <h2 class="text-2xl font-bold mb-6 text-GMprimary">Registrarse</h2>
       <form @submit.prevent="handleSubmit" class="flex flex-col justify-center h-full">
         <div class="mb-4">
