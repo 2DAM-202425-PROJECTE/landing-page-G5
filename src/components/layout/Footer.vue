@@ -3,18 +3,14 @@
     <div class="container px-6 py-12 mx-auto">
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
         <div class="sm:col-span-2">
-          <h1 class="max-w-lg text-xl font-semibold tracking-tight text-primary xl:text-2xl">Suscribete para recibir las actualizaciones</h1>
+          <h1 class="max-w-lg text-xl font-semibold tracking-tight text-[#5bc0be] xl:text-2xl">Suscribete para recibir las actualizaciones</h1>
 
-          <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
-            <input type="text" class="px-4 py-2 text-primary bg-background border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Email" />
-            <button type="button" class="w-full px-6 py-2 text-white bg-primary rounded-md md:w-auto md:mx-4 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Subscrirse
-            </button>
-          </div>
+          <iframe src="https://gymmanager.substack.com/embed" width="480" height="150" style="border:1px solid #EEE; background:transparent;" frameborder="0" scrolling="no"></iframe>
+
         </div>
 
         <div>
-          <p class="font-semibold text-primary">Links</p>
+          <p class="font-semibold text-[#5bc0be]">Links</p>
 
           <div class="flex flex-col items-start mt-5 space-y-2">
             <a href="/" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Inicio</a>
@@ -25,7 +21,7 @@
         </div>
 
         <div>
-          <p class="font-semibold text-primary">Resources</p>
+          <p class="font-semibold text-[#5bc0be]">Resources</p>
 
           <div class="flex flex-col items-start mt-5 space-y-2">
             <a href="/preguntas-frecuentes" class="text-muted-foreground transition-colors duration-300 hover:text-primary">FAQ</a>
