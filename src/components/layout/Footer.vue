@@ -13,10 +13,10 @@
           <p class="font-semibold text-[#5bc0be]">Links</p>
 
           <div class="flex flex-col items-start mt-5 space-y-2">
-            <a href="/" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Inicio</a>
-            <a href="/sobre-nosotros" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Sobre Nosotros</a>
-            <a href="/precio" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Precio</a>
-            <a href="/contacto" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Contacto</a>
+            <router-link to="/" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Inicio</router-link>
+            <router-link to="/sobre-nosotros" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Sobre Nosotros</router-link>
+            <router-link to="/precio" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Precio</router-link>
+            <router-link to="/contacto" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Contacto</router-link>
           </div>
         </div>
 
@@ -24,9 +24,9 @@
           <p class="font-semibold text-[#5bc0be]">Resources</p>
 
           <div class="flex flex-col items-start mt-5 space-y-2">
-            <a href="/preguntas-frecuentes" class="text-muted-foreground transition-colors duration-300 hover:text-primary">FAQ</a>
-            <a href="/politicapriv" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Politica de privacidad</a>
-            <a href="/cookiesterminos" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Terminos de Cookies</a>
+            <router-link to="/preguntas-frecuentes" class="text-muted-foreground transition-colors duration-300 hover:text-primary">FAQ</router-link>
+            <router-link to="/politicapriv" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Politica de privacidad</router-link>
+            <router-link to="/cookiesterminos" class="text-muted-foreground transition-colors duration-300 hover:text-primary">Terminos de Cookies</router-link>
           </div>
         </div>
       </div>
