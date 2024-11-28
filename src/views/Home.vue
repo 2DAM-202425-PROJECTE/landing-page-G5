@@ -228,7 +228,7 @@
 import Card from '../components/Card.vue';
 import Comentarios from '../components/Comentarios.vue';
 import Newsletter from '../components/Newsletter.vue';
-import ContactSection from '../components/incio/ContactSection.vue';
-import FeatureSection from '../components/incio/FeatureSection.vue';
-import Titulo from '../components/incio/Titulo.vue';
+import ContactSection from '../components/inicio/ContactSection.vue';
+import FeatureSection from '../components/inicio/FeatureSection.vue';
+import Titulo from '../components/inicio/Titulo.vue';
 </script>

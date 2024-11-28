@@ -13,6 +13,7 @@
           >
             <v-card>
               <v-img
+                alt="Imagen de fondo"
                 :src="card.src"
                 class="align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"

@@ -4,9 +4,11 @@
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
         <div class="sm:col-span-2">
           <h1 class="max-w-lg text-xl font-semibold tracking-tight text-[#5bc0be] xl:text-2xl">Suscribete para recibir las actualizaciones</h1>
+        <div class=" md:w-full">
 
-          <iframe src="https://gymmanager.substack.com/embed" width="480" height="150" style="border:1px solid #EEE; background:transparent;" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://gymmanager.substack.com/embed" width="320" height="150" style="border:1px solid #EEE; background:transparent;" frameborder="0" scrolling="no"></iframe>
 
+        </div>
         </div>
 
         <div>
