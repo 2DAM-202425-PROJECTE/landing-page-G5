@@ -5,7 +5,7 @@ import Precio from '../views/Precio.vue';
 import Contacto from '../views/Contacto.vue';
 import PreguntasFrecuentes from '../views/PreguntasFrecuentes.vue';
 import Pago from '../views/Pago.vue';
-import Login from '../views/Login.vue';
+import Login from '../views/Loginold.vue';
 import PagarPersonalizado from '../views/PagarPersonalizado.vue';
 import Termpriv from '../views/Termpriv.vue';
 import Cookiesterminos from '../views/Cookiesterminos.vue';

@@ -2,6 +2,7 @@
   <v-container class="!md:p-56 bg-gradient-to-t from-black to-[#08201D]  pa-md-16 relative" fluid>
     <v-row align="center">
 <div class="flex md:w-2/4 justify-center">
+  
   <iframe src="https://gymmanager.substack.com/embed" width="380" height="150" style="border:1px solid #EEE; background:transparent;" frameborder="0" scrolling="no"></iframe>
 
 </div>
