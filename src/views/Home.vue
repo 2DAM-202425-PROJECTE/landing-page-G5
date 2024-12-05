@@ -84,7 +84,7 @@
           </dl>
         </div>
       </div>
-      <img src="https://mockframe.com/images/blog/best-mockup-software.png?v=1666261606584267669" alt="Mostra una imatge representativa del software" class="w-full md:w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+      <img src="/src/assets/images/pantallaInicio.png" alt="Mostra una imatge representativa del software" class="w-full md:w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
     </div>
     <div class="grid grid-cols-1 px-10 md:px-20 mt-12 text-left gap-x-12 gap-y-8 sm:grid-cols-4 sm:px-0">
                     <div class="flex items-center">

@@ -3,7 +3,7 @@
     <!-- Background Image -->
     <div
       class="absolute inset-0 blur-sm bg-cover bg-center bg-no-repeat"
-      :style="{ backgroundImage: `url('https://media.istockphoto.com/id/1391410249/photo/sports-and-gym-activities.jpg?s=612x612&w=0&k=20&c=1S-hAmT-CkRtdYV_hcKi1lZdQkXAN_mCy3ebIXlUEnE=')`, backgroundAttachment: 'fixed' }"
+      :style="{ backgroundImage: `url('/src/assets/images/mancuernas.jpg')`, backgroundAttachment: 'fixed' }"
     ></div>
     
     <!-- Overlay for better text visibility -->
