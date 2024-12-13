@@ -13,6 +13,7 @@
           >
             <v-card>
               <v-img
+                alt="Imagen de fondo"
                 :src="card.src"
                 class="align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -32,9 +33,9 @@
       name: 'Card',
       data: () => ({
         cards: [
-          { title: 'Gestion de clientes', src: 'https://www.origym.ie/wp-content/uploads/2023/02/Career-Change-to-a-Personal-Trainer.webp', flex: 12 },
-          { title: 'Organiza tus clases', src: 'https://cienciasdeportivas.com/wp-content/uploads/clase-de-aerobic.jpg', flex: 6 },
-          { title: 'Administra', src: 'https://www.muypymes.com/wp-content/uploads/2018/05/cuentasanuales-infocif.jpg', flex: 6 },
+          { title: 'Gestion de clientes', src: '/src/assets/images/entrenador.webp', flex: 12 },
+          { title: 'Organiza tus clases', src: '/src/assets/images/chicasgym.jpg', flex: 6 },
+          { title: 'Administra', src: '/src/assets/images/boli.jpg', flex: 6 },
         ],
       }),
     }

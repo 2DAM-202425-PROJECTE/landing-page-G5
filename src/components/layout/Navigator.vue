@@ -25,7 +25,7 @@
         />
       </template>
 
-      <v-img class="me-sm-8" max-width="40" src="/src/assets/icons/logo.png" />
+      <v-img class="me-sm-8" max-width="40" src="/src/assets/icons/logo.png"  alt="logo"/>
 
       <template v-if="$vuetify.display.mdAndUp">
         <v-btn 
@@ -49,10 +49,25 @@
           <v-avatar class="border-2 border-slate-100" image="/src/assets/icons/profile.jpg" />
           <v-menu activator="parent" origin="top">
             <v-list>
-              <v-list-item @click="$router.push('/login')" link title="Registrate" />
-              <v-list-item link title="Cerrar Sesion" />
-              <v-list-item @click="$router.push('/profile-settings')"link title="Configuracion" />
-            </v-list>
+              <v-list-item
+                  @click="$router.push('/login')"
+                  link
+                  aria-label="Registrate"
+                  title="Registrate"
+              />
+              <v-list-item
+                  link
+                  aria-label="Cerrar Sesión"
+                  title="Cerrar Sesión"
+              />
+              <v-list-item
+                  @click="$router.push('/profile-settings')"
+                  link
+                  aria-label="Configuración"
+                  title="Configuración"
+              />
+          </v-list>
+          
           </v-menu>
         </v-btn>
       </template>

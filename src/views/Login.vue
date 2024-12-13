@@ -1,246 +1,333 @@
 <template>
-  <div class="flex justify-center h-screen w-full bg-gradient-to-b from-[#101212]  to-[#08201D]">
-    <div class="w-4/6">
-      <v-row align="center" justify="center">
-        <v-col cols="12" sm="10">
-          <v-card class="elevation-6 mt-10">
-            <v-window v-model="step" class="shadow-md shadow-black">
-              <!-- Ventana de inicio de sesión -->
-              <v-window-item :value="1">
-                <v-row>
-                  <v-col cols="12" md="6">
-                    <v-card-text class="mt-12">
-                      <div class="w-full flex justify-center">
-                        <h2 class="text-center text-4xl font-bold">Inicia sesión</h2>
-                      </div>
-                      <v-row align="center" justify="center">
-                        <v-col cols="12" sm="8">
-                          <v-text-field
-                            v-model="loginEmail"
-                            label="Email"
-                            variant="outlined"
-                            dense
-                            color="blue"
-                            autocomplete="off"
-                            class="mt-16"
-                          />
-                          <v-text-field
-                            v-model="loginPassword"
-                            label="Password"
-                            variant="outlined"
-                            dense
-                            color="blue"
-                            autocomplete="off"
-                            type="password"
-                          />
-                          <v-row>
-                            <v-col cols="12" sm="7">
-                              <v-checkbox
-                                v-model="rememberMe"
-                                label="Recordarme"
-                                color="blue"
-                                class="mt-n1"
-                              />
-                            </v-col>
-                            <v-col cols="12" sm="5">
-                              <span class="caption blue--text">¿Olvidaste tu contraseña?</span>
-                            </v-col>
-                          </v-row>
-                          <v-btn color="#5BC0BE" dark block tile @click="loginUser">Inicia sesión</v-btn>
-  
-                          <h5 class="text-center grey--text mt-4 mb-3">O inicia sesión con</h5>
-                          <div class="flex justify-center align-center ">
-                            <v-btn depressed outlined color="#5BC0BE">
-                              <v-icon color="white">mdi-google</v-icon>
-                            </v-btn>
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-card-text>
-                  </v-col>
-                  <v-col cols="12" md="6" class="blue rounded-bl-xl">
-                    <div style="background-color: #5BC0BE; border-bottom-left-radius: 20% ; text-align: center; padding: 180px 0;">
-                      <v-card-text class="white--text">
-                        <h3 class="text-center font-poppins mb-5 text-3xl font-bold">¿Aún no tienes una cuenta?</h3>
-                        <h6 class="text-center font-poppins">
-                          Vamos a configurarlo todo para que puedas comenzar a crear tu primera experiencia de incorporación
-                        </h6>
-                      </v-card-text>
-                      <div class="text-center">
-                        <v-btn tile outlined dark @click="step++">Regístrate</v-btn>
-                      </div>
-                    </div>
-                  </v-col>
-                </v-row>
-              </v-window-item>
-  
-              <!-- Ventana de registro -->
-              <v-window-item :value="2">
-                <v-row>
-                  <v-col cols="12" md="6" class="blue rounded-br-xl">
-                    <div style="background-color: #5BC0BE; border-right: 1 #5BC0BE ; border-bottom-right-radius: 20%; text-align: center; padding: 180px 0;">
-                      <v-card-text class="white--text">
-                        <h3 class="mb-5 text-3xl font-bold font-poppins text-center">¿Ya te has registrado?</h3>
-                        <h6 class="text-center font-poppins">
-                          Inicia sesión en tu cuenta para que puedas continuar construyendo y editando tus flujos de incorporación
-                        </h6>
-                      </v-card-text>
-                      <div class="text-center">
-                        <v-btn tile outlined dark @click="step--">Inicia sesión</v-btn>
-                      </div>
-                    </div>
-                  </v-col>
-  
-                  <v-col cols="12" md="6">
-                    <v-card-text class="mt-12">
-                      <div class="w-full flex justify-center">
-                        <h2 class="text-center text-4xl font-bold">Regístrate</h2>
-                      </div>
-                      <v-row align="center" justify="center">
-                        <v-col cols="12" sm="8">
-                          <v-row>
-                            <v-col cols="12" sm="6">
-                              <v-text-field
-                                v-model="firstName"
-                                label="Nombre"
-                                variant="outlined"
-                                dense
-                                color="blue"
-                                autocomplete="off"
-                                class="mt-4"
-                              />
-                            </v-col>
-                            <v-col cols="12" sm="6">
-                              <v-text-field
-                                v-model="lastName"
-                                label="Apellido"
-                                variant="outlined"
-                                dense
-                                color="blue"
-                                autocomplete="off"
-                                class="mt-4"
-                              />
-                            </v-col>
-                          </v-row>
-                          <v-text-field
-                            v-model="registerEmail"
-                            label="Email"
-                            variant="outlined"
-                            dense
-                            color="blue"
-                            autocomplete="off"
-                          />
-                          <v-text-field
-                            v-model="registerPassword"
-                            label="Password"
-                            variant="outlined"
-                            dense
-                            color="blue"
-                            autocomplete="off"
-                            type="password"
-                          />
-                          <v-row>
-                            <v-col cols="12" sm="7">
-                              <v-checkbox
-                                v-model="acceptTerms"
-                                label="Aceptar términos"
-                                color="blue"
-                                class="mt-n1"
-                              />
-                            </v-col>
-                          </v-row>
-                          <v-btn color="#5BC0BE" dark block tile @click="registerUser">Regístrate</v-btn>
-  
-                          <h5 class="text-center grey--text mt-4 mb-3">O regístrate usando</h5>
-                          <div class="flex justify-center">
-                            <v-btn depressed outlined color="#5BC0BE">
-                              <v-icon color="white">mdi-google</v-icon>
-                            </v-btn>
-                          </div>
-                        </v-col>
-                      </v-row>
-                    </v-card-text>
-                  </v-col>
-                </v-row>
-              </v-window-item>
-            </v-window>
-          </v-card>
-        </v-col>
-      </v-row>
-    </div>
-  </div>
+	<div class="flex justify-center items-center min-h-screen bg-gradient-to-br from-[#5bc0be] via-gray-900 to-green-500 py-16 px-4 sm:px-6 lg:px-8">
+		<div class="container" :class="{ 'right-panel-active': isRightPanelActive }">
+			<div class="form-container sign-up-container">
+			  <form @submit.prevent="handleSignUp">
+				<h1 class="text-2xl font-bold mb-4">Crear Cuenta</h1>
+				<div class="social-container">
+				</div>
+				<span class="my-2">o usa tu correo electrónico para registrarte</span>
+				<input type="text" placeholder="Nombre" class="input" v-model="name" />
+				<input type="email" placeholder="Correo electrónico" class="input" v-model="email" />
+				<input type="password" placeholder="Contraseña" class="input" v-model="password" />
+				<button class="button mt-4">Registrarse</button>
+			  </form>
+			</div>
+			<div class="form-container sign-in-container">
+			  <form @submit.prevent="handleSignIn">
+				<h1 class="text-2xl font-bold mb-4">Iniciar Sesión</h1>
+				<div class="social-container">
+				</div>
+				<span class="my-2">o usa tu cuenta</span>
+				<input type="email" placeholder="Correo electrónico" class="input" v-model="email" />
+				<input type="password" placeholder="Contraseña" class="input" v-model="password" />
+				<a href="#" class="my-2">¿Olvidaste tu contraseña?</a>
+				<button class="button mt-4">Iniciar Sesión</button>
+			  </form>
+			</div>
+			<div class="overlay-container">
+			  <div class="overlay">
+				<div class="overlay-panel overlay-left">
+				  <h1 class="text-2xl font-bold mb-4">¡Bienvenido de Nuevo!</h1>
+				  <p>Para mantenerte conectado, inicia sesión con tu información personal</p>
+				  <button class="ghost button mt-4" @click="togglePanel">Iniciar Sesión</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+				  <h1 class="text-2xl font-bold mb-4">¡Hola, Amigo!</h1>
+				  <p>Ingresa tus datos personales y comienza tu viaje con nosotros</p>
+				  <button class="ghost button mt-4" @click="togglePanel">Registrarse</button>
+				</div>
+			  </div>
+			</div>
+			<!-- Alternar en móvil -->
+			<div class="mobile-toggle">
+			  <button @click="togglePanel" class="button w-full">
+				{{ isRightPanelActive ? 'Cambiar a Iniciar Sesión' : 'Cambiar a Registrarse' }}
+			  </button>
+			</div>
+		  </div>
+	</div>
 </template>
 
-<script>
-import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import router from '../router';
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDt1udCTnpVHgCqCPqMvpFLfR9ZCtPgJ4w",
-  authDomain: "sdadsasd-ea882sda.firebaseapp.com",
-  projectId: "sdadsasd-ea882sda",
-  storageBucket: "sdadsasd-ea882sda.appspot.com",
-  messagingSenderId: "944012620508",
-  appId: "1:944012620508:web:cc587d2bc90ba2169ffa19",
-  measurementId: "G-8HSMJQ4W45"
+const isRightPanelActive = ref(false);
+const router = useRouter();
+
+const name = ref('');
+const email = ref('');
+const password = ref('');
+
+const togglePanel = () => {
+	isRightPanelActive.value = !isRightPanelActive.value;
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-export default {
-  data() {
-    return {
-      step: 1,
-      rememberMe: false,
-      acceptTerms: false,
-      // Datos para inicio de sesión
-      loginEmail: '',
-      loginPassword: '',
-      // Datos para registro
-      firstName: '',
-      lastName: '',
-      registerEmail: '',
-      registerPassword: '',
-    };
-  },
-  methods: {
-    async registerUser() {
-      try {
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          this.registerEmail,
-          this.registerPassword
-        );
-        alert('Usuario registrado con éxito');
-      } catch (error) {
-        console.error('Error registrando usuario:', error.message);
-      }
-    },
-    async loginUser() {
-      try {
-        const userCredential = await signInWithEmailAndPassword(
-          auth,
-          this.loginEmail,
-          this.loginPassword
-        ); 
-        router.push('/');
- 
-      } catch (error) {
-        alert("Credencials invalidas");
-        // Aquí puedes mostrar un mensaje de error al usuario
-      }
-    },
-  },
+// Función para manejar el registro
+const handleSignUp = () => {
+	// Aquí puedes manejar el registro (ejemplo: API)
+	console.log('Registro exitoso:', { name: name.value, email: email.value });
+	// Redirigir a la página principal
+	router.push('/?success=signup');
+};
+
+// Función para manejar el inicio de sesión
+const handleSignIn = () => {
+	// Aquí puedes manejar el inicio de sesión (ejemplo: API)
+	console.log('Inicio de sesión exitoso:', { email: email.value });
+	// Redirigir a la página principal
+	router.push('/?success=signin');
 };
 </script>
+  
+  <style scoped>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+  
+  * {
+	box-sizing: border-box;
+  }
+  
+  .container {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+	min-height: 480px;
+	font-family: 'Montserrat', sans-serif;
+  }
+  
+  .form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+  }
+  
+  .sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+  }
+  
+  .sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+  }
+  
+  .overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+  }
+  
+  .overlay {
+	background: #FF416C;
+	background: linear-gradient(to right, #6F73D2, #5BC0BE);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+  }
+  
+  .overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+  }
+  
+  .overlay-left {
+	transform: translateX(-20%);
+  }
+  
+  .overlay-right {
+	right: 0;
+	transform: translateX(0);
+  }
+  
+  button {
+	border-radius: 20px;
+	border: 1px solid #6F73D2;
+	background-color: #6F73D2;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+  }
+  
+  button:active {
+	transform: scale(0.95);
+  }
+  
+  button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+  }
+  
+  form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+  }
+  
+  input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+  }
+  
+  .social-container {
+	margin: 20px 0;
+  }
+  
+  .social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+  }
+  
+  .mobile-toggle {
+	display: none;
+  }
+  
+  @media (min-width: 768px) {
+	.container {
+	  width: 768px;
+	}
+  
+	.container.right-panel-active .sign-in-container {
+	  transform: translateX(100%);
+	}
+  
+	.container.right-panel-active .sign-up-container {
+	  transform: translateX(100%);
+	  opacity: 1;
+	  z-index: 5;
+	  animation: show 0.6s;
+	}
+  
+	.container.right-panel-active .overlay-container {
+	  transform: translateX(-100%);
+	}
+  
+	.container.right-panel-active .overlay {
+	  transform: translateX(50%);
+	}
+  
+	.container.right-panel-active .overlay-left {
+	  transform: translateX(0);
+	}
+  
+	.container.right-panel-active .overlay-right {
+	  transform: translateX(20%);
+	}
+  }
+  
+  @media (max-width: 767px) {
+	.container {
+	  min-height: auto;
+	}
+  
+	.form-container {
+	  position: relative;
+	  width: 100%;
+	  height: auto;
+	  transition: none;
+	}
+  
+	.sign-in-container, .sign-up-container {
+	  opacity: 1;
+	  z-index: 1;
+	}
+  
+	.overlay-container {
+	  display: none;
+	}
+  
+	.mobile-toggle {
+	  display: block;
+	  padding: 20px;
+	}
+  
+	.sign-up-container {
+	  display: none;
+	}
+  
+	.container.right-panel-active .sign-in-container {
+	  display: none;
+	}
+  
+	.container.right-panel-active .sign-up-container {
+	  display: block;
+	}
+  }
+  
+  @keyframes show {
+	0%, 49.99% {
+	  opacity: 0;
+	  z-index: 1;
+	}
+	
+	50%, 100% {
+	  opacity: 1;
+	  z-index: 5;
+	}
+  }
 
-<style scoped>
-.rounded-bl-xl {
-  border-bottom-left-radius: 300px !important;
-}
-.rounded-br-xl {
-  border-bottom-right-radius: 300px !important;
-}
-</style>
+  @keyframes gradient {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}
+  }
+  
+  .bg-gradient-to-br {
+	background-size: 200% 200%;
+	animation: gradient 15s ease infinite;
+  }
+  </style>
