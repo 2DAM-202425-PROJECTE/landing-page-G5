@@ -33,7 +33,7 @@
       name: 'Card',
       data: () => ({
         cards: [
-          { title: 'Gestion de clientes', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0OD7LDDxkSMEVkVlDnUBk5Ee_eYQW2b5g0abf8rNaIjedGHoO', flex: 12 },
+          { title: 'Gestion de clientes', src: 'https://assets.website-files.com/5bee2dee67d34caed2a30658/5bf358d54414ed3e8438857e_Personal%20Trainer%20copy.jpg', flex: 12 },
           { title: 'Organiza tus clases', src: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbaYLbtSPm-iAPCTCM61R73TlVyJsZMWaabOI_r4psT5tMkp3H', flex: 6 },
           { title: 'Administra', src: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQjk945kQ5RaOurxuKVq9I3d0N_GS9l8IU3q4PpihpjjLStxKUh', flex: 6 },
         ],
