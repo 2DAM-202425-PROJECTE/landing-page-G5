@@ -33,9 +33,9 @@
       name: 'Card',
       data: () => ({
         cards: [
-          { title: 'Gestion de clientes', src: '/src/assets/images/entrenador.webp', flex: 12 },
-          { title: 'Organiza tus clases', src: '/src/assets/images/chicasgym.jpg', flex: 6 },
-          { title: 'Administra', src: '/src/assets/images/boli.jpg', flex: 6 },
+          { title: 'Gestion de clientes', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0OD7LDDxkSMEVkVlDnUBk5Ee_eYQW2b5g0abf8rNaIjedGHoO', flex: 12 },
+          { title: 'Organiza tus clases', src: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbaYLbtSPm-iAPCTCM61R73TlVyJsZMWaabOI_r4psT5tMkp3H', flex: 6 },
+          { title: 'Administra', src: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQjk945kQ5RaOurxuKVq9I3d0N_GS9l8IU3q4PpihpjjLStxKUh', flex: 6 },
         ],
       }),
     }

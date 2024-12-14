@@ -3,7 +3,7 @@
     <!-- Background Image -->
     <div
       class="absolute inset-0 blur-sm bg-cover bg-center bg-no-repeat"
-      :style="{ backgroundImage: `url('/src/assets/images/mancuernas.jpg')`, backgroundAttachment: 'fixed' }"
+      :style="{ backgroundImage: `url('https://img.baba-blog.com/2024/03/dumbbells-in-the-gym-1.jpg?x-oss-process=style%2Ffull')`, backgroundAttachment: 'fixed' }"
     ></div>
     
     <!-- Overlay for better text visibility -->
