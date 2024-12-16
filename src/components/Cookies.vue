@@ -2,7 +2,7 @@
     <div v-if="!accepted" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 flex justify-between items-center shadow-lg z-50">
       <p class="mr-4">
         Este sitio utiliza cookies para mejorar la experiencia del usuario. 
-        <a href="/cookiesterminos" target="_blank" class="text-GMquaternary hover:underline">Leer más</a>
+        <router-link href="/cookiesterminos" target="_blank" class="text-GMquaternary hover:underline">Leer más</router-link>
       </p>
       <button 
         @click="acceptCookies" 
