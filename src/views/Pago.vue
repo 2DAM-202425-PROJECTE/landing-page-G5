@@ -107,7 +107,7 @@
         <div class="p-6">
           <button type="submit"
             class="w-full border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out transform hover:scale-105 animated-gradient relative overflow-hidden">
-            <span class="relative z-10">Pagar €{{ (precio - descuento).toFixed(2) }}</span>
+            <span class="relative z-10">Pagar {{ props.precio }}</span>
             <div class="absolute inset-0 overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-teal-300 animate-gradient-x"></div>
             </div>
